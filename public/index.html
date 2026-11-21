@@ -120,6 +120,10 @@
         <select id="style"></select>
       </label>
 
+      <label>Image model
+        <select id="target-model"></select>
+      </label>
+
       <label>Extra notes
         <textarea id="notes" style="min-height:90px" placeholder="Anything else to include in the prompt"></textarea>
       </label>
@@ -225,6 +229,8 @@ const DATA = {
     "Standing heroically", "Mid-action", "Crouched and alert", "Arms crossed",
     "Leaning on weapon", "Casting a spell", "Looking over shoulder", "Relaxed stance"
   ],
+  // Prompt wording is tuned per model family (see requirementsText).
+  targetModels: ["Most models (GPT Image, Seedream, etc.)", "FLUX"],
   styles: [
     "Painterly fantasy illustration", "Dark fantasy painting", "Watercolour",
     "Digital concept art", "Ink and wash", "Classic oil painting", "Anime-inspired"
@@ -404,6 +410,16 @@ function classDescription() {
   return `${indefinite(name)} ${name}` + (cues ? `, ${cues}` : "");
 }
 
+// FLUX treats every word as something to include, so "no logos" can add a logo.
+// For FLUX, describe the clean result instead of listing what to avoid.
+function requirementsText() {
+  const base = "A single character, clearly the focus of the image. Correct anatomy with natural hands. ";
+  if ($("target-model").value === "FLUX") {
+    return base + "Clean, unmarked artwork: the corners and edges show only the scene itself.";
+  }
+  return base + "No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.";
+}
+
 // ---------- prompt building ----------
 function buildPrompt() {
   const selectedAccessories = [...$("accessories").querySelectorAll("input:checked")]
@@ -422,9 +438,7 @@ function buildPrompt() {
   sections.push(
     "SUBJECT\n" +
     subject.charAt(0).toUpperCase() + subject.slice(1) + " " +
-    ($("ruleset").value === "Generic Fantasy"
-      ? "A character from a fantasy tabletop RPG."
-      : `A character from the ${$("ruleset").value} tabletop RPG.`)
+    "A fantasy tabletop RPG character."
   );
 
   const appearance = [];
@@ -455,11 +469,7 @@ function buildPrompt() {
 
   if ($("notes").value.trim()) sections.push(`NOTES\n${$("notes").value.trim()}`);
 
-  sections.push(
-    "REQUIREMENTS\n" +
-    "A single character, clearly the focus of the image. Correct anatomy with natural hands. " +
-    "No text, captions, watermarks, signatures, or borders."
-  );
+  sections.push("REQUIREMENTS\n" + requirementsText());
 
   $("output").value = "Generate an image.\n\n" + sections.join("\n\n");
 }
@@ -497,7 +507,9 @@ function randomize() {
 function clearAll() {
   document.querySelectorAll("input[type=text], textarea").forEach(el => el.value = "");
   document.querySelectorAll("#accessories input").forEach(cb => cb.checked = false);
+  const model = $("target-model").value; // a preference, not part of the character
   document.querySelectorAll("select").forEach(sel => sel.selectedIndex = 0);
+  $("target-model").value = model;
   refreshAncestries();
   toggleOther("ancestry", "ancestry-other");
   toggleOther("class", "class-other");
@@ -537,6 +549,7 @@ function init() {
   fillSelect($("lighting"), DATA.lightings);
   fillSelect($("pose"), DATA.poses);
   fillSelect($("style"), DATA.styles);
+  fillSelect($("target-model"), DATA.targetModels);
 
   $("ruleset").addEventListener("change", refreshAncestries);
   $("ancestry").addEventListener("change", () => {
