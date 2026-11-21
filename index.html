@@ -2,145 +2,324 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PromptForge - TTRPG Character Image Prompt Builder</title>
 <meta name="description" content="Build a structured AI image prompt for a tabletop RPG character.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #0e0b09;
+    --panel: #1a1411;
+    --panel-hi: #231b16;
+    --input: #120e0b;
+    --line: #3b2d24;
+    --line-hi: #5a4334;
+    --text: #f4eadf;
+    --muted: #a6968a;
+    --ember: #ff7a2f;
+    --flame: #ff4d2e;
+    --gold: #f6c453;
+    --glow: rgba(255, 122, 47, 0.35);
+    --display: "Cinzel", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   body {
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    background: #14110e;
-    color: #1c1612;
+    min-height: 100vh;
+    font-family: var(--sans);
+    color: var(--text);
+    background:
+      radial-gradient(900px 500px at 15% -10%, rgba(255, 90, 30, 0.22), transparent 60%),
+      radial-gradient(700px 500px at 100% 0%, rgba(246, 196, 83, 0.10), transparent 60%),
+      radial-gradient(800px 600px at 50% 120%, rgba(255, 77, 46, 0.12), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
   }
   .wrap {
-    max-width: 1100px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 32px 18px 60px;
+    padding: 44px 18px 72px;
   }
-  header {
-    color: #f6efe6;
-    margin-bottom: 24px;
-  }
+
+  /* ---------- header ---------- */
+  header { margin-bottom: 32px; }
   .eyebrow {
-    margin: 0 0 6px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    padding: 5px 12px 5px 10px;
+    border: 1px solid rgba(255, 122, 47, 0.4);
+    border-radius: 999px;
+    background: rgba(255, 122, 47, 0.08);
+    color: var(--ember);
     font-size: 12px;
-    color: #c9843a;
-    font-family: Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ember);
+    box-shadow: 0 0 10px 2px var(--ember);
+    animation: ember 2.4s ease-in-out infinite;
+  }
+  @keyframes ember {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
   }
   h1 {
     margin: 0;
-    font-size: 44px;
-    font-weight: normal;
+    font-family: var(--display);
+    font-size: clamp(34px, 5.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    background: linear-gradient(100deg, var(--gold) 0%, var(--ember) 45%, var(--flame) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 40px rgba(255, 122, 47, 0.18);
   }
   header p {
-    max-width: 600px;
-    color: #d9cbbd;
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+    max-width: 620px;
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
   }
+
+  /* ---------- layout ---------- */
   .layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 22px;
     align-items: flex-start;
   }
   .panel {
+    position: relative;
     flex: 1 1 480px;
-    background: #f6f0e6;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(180deg, var(--panel-hi), var(--panel) 220px);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+  }
+  .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--ember), var(--flame), transparent);
   }
   .panel.output {
     flex: 1 1 360px;
     position: sticky;
     top: 16px;
   }
+
+  /* ---------- buttons ---------- */
   .toolbar {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
   }
   button {
-    font-family: Arial, sans-serif;
+    font-family: var(--sans);
     font-size: 15px;
-    border: none;
+    font-weight: 600;
+    border: 1px solid var(--line-hi);
     border-radius: 999px;
-    padding: 11px 20px;
+    padding: 11px 22px;
     cursor: pointer;
-    background: #e2d8c8;
-    color: #1c1612;
+    background: transparent;
+    color: var(--text);
+    transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  button:hover {
+    border-color: var(--ember);
+    background: rgba(255, 122, 47, 0.08);
   }
   button.primary {
-    background: #7a3e1d;
-    color: #f6efe6;
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--gold), var(--ember) 45%, var(--flame));
+    color: #1a0c05;
+    box-shadow: 0 6px 22px var(--glow);
   }
-  button:hover { filter: brightness(0.96); }
+  button.primary:hover {
+    background: linear-gradient(135deg, var(--gold), var(--ember) 45%, var(--flame));
+    box-shadow: 0 8px 30px rgba(255, 122, 47, 0.55);
+    transform: translateY(-1px);
+  }
+  button:active { transform: translateY(1px); }
+  button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  /* ---------- form ---------- */
   .section-title {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.16em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #7d6a58;
-    border-bottom: 1px solid #d6c9b8;
-    padding-bottom: 6px;
-    margin: 22px 0 14px;
+    color: var(--gold);
+    margin: 30px 0 16px;
+  }
+  .section-title::before {
+    content: "\25C6";
+    font-size: 10px;
+    color: var(--ember);
+    text-shadow: 0 0 8px var(--ember);
+  }
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--line-hi), transparent);
   }
   label {
     display: block;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    margin-bottom: 14px;
-    color: #3a2f26;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    color: var(--muted);
   }
   select, input[type=text], textarea {
     display: block;
     width: 100%;
-    margin-top: 6px;
-    padding: 10px 12px;
-    font-family: Arial, sans-serif;
+    margin-top: 7px;
+    padding: 11px 13px;
+    font-family: var(--sans);
     font-size: 15px;
-    border: 1px solid #c9bba9;
+    border: 1px solid var(--line);
     border-radius: 10px;
-    background: #fffdf9;
-    color: #1c1612;
+    background: var(--input);
+    color: var(--text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 38px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23ff7a2f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+  select option { background: var(--panel); color: var(--text); }
+  select:hover, input[type=text]:hover, textarea:hover { border-color: var(--line-hi); }
+  select:focus, input[type=text]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--ember);
+    box-shadow: 0 0 0 3px rgba(255, 122, 47, 0.2), 0 0 18px rgba(255, 122, 47, 0.15);
+  }
+  input::placeholder, textarea::placeholder { color: #6d5e53; }
   textarea {
     min-height: 260px;
     resize: vertical;
-    font-family: "Courier New", monospace;
-    font-size: 14px;
-    line-height: 1.5;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.65;
   }
-  .other-input {
+  #output {
+    min-height: 420px;
+    color: #f1dfc9;
+    background:
+      linear-gradient(180deg, rgba(255, 122, 47, 0.05), transparent 120px),
+      var(--input);
+    border-color: var(--line-hi);
+    caret-color: var(--ember);
+  }
+  input.other-input {
     margin-top: 8px;
     display: none;
+    border-style: dashed;
+    border-color: rgba(255, 122, 47, 0.5);
   }
-  .other-input.show { display: block; }
+  input.other-input.show { display: block; }
+
+  /* ---------- accessory chips ---------- */
   .checks {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 8px;
-    font-family: Arial, sans-serif;
+    margin-top: 8px;
     font-size: 14px;
   }
   .checks label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
     margin: 0;
-    background: #fffdf9;
-    border: 1px solid #d6c9b8;
+    color: var(--text);
+    background: var(--input);
+    border: 1px solid var(--line);
     border-radius: 10px;
-    padding: 8px 10px;
+    padding: 9px 11px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
   }
+  .checks label:hover { border-color: var(--line-hi); }
+  .checks input { accent-color: var(--ember); margin: 0; }
+  .checks label:has(input:checked) {
+    border-color: var(--ember);
+    background: rgba(255, 122, 47, 0.12);
+    box-shadow: 0 0 14px rgba(255, 122, 47, 0.18);
+  }
+
+  /* ---------- copy feedback ---------- */
+  #copy.copied, #copy-mobile.copied {
+    background: linear-gradient(135deg, #b8e07a, #5fbf6a);
+    box-shadow: 0 6px 22px rgba(95, 191, 106, 0.4);
+  }
+
+  /* ---------- mobile bar (phones only) ---------- */
+  .mobile-bar { display: none; }
+
   @media (max-width: 700px) {
-    h1 { font-size: 34px; }
+    .wrap { padding-top: 28px; padding-bottom: 110px; }
     .panel { padding: 18px; }
+    .panel.output { position: static; scroll-margin-top: 12px; }
+    #form-panel { scroll-margin-top: 12px; }
+    /* 16px stops iOS Safari zooming in when a field is tapped */
+    select, input[type=text], textarea { font-size: 16px; }
+    #output { min-height: 340px; }
+    .mobile-bar {
+      display: flex;
+      gap: 10px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      background: rgba(20, 15, 12, 0.96);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.45);
+    }
+    .mobile-bar button { flex: 1; padding: 13px 16px; }
+    .mobile-bar button:not(.primary) { background: var(--panel-hi); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before { animation: none !important; transition: none !important; }
   }
 </style>
 </head>
@@ -189,7 +368,7 @@
 
       <div class="section-title">Appearance</div>
 
-      <label>Hair
+      <label id="hair-field">Hair
         <select id="hair"></select>
         <input type="text" id="hair-other" class="other-input" placeholder="Describe the hair">
       </label>
@@ -199,7 +378,7 @@
         <input type="text" id="eyes-other" class="other-input" placeholder="Describe the eyes">
       </label>
 
-      <label>Skin
+      <label><span id="skin-label">Skin</span>
         <select id="skin"></select>
         <input type="text" id="skin-other" class="other-input" placeholder="Describe the skin">
       </label>
@@ -261,6 +440,11 @@
         <textarea id="output" readonly></textarea>
       </label>
     </div>
+  </div>
+
+  <div class="mobile-bar">
+    <button type="button" id="jump">View prompt</button>
+    <button type="button" id="copy-mobile" class="primary">Copy prompt</button>
   </div>
 </div>
 <script>
@@ -391,10 +575,43 @@ const ANCESTRY_DETAILS = {
   "Infernis": "a fiend-touched humanoid with horns and ember-colored eyes",
   "Simiah": "an ape-like humanoid with long arms, a thick brow, and expressive features",
   "Seraph": "a celestial humanoid with feathered wings and a radiant bearing",
-  "Wyrmling": "a young dragon-kin humanoid with small horns, a scaled tail, and keen eyes"
+  "Wyrmling": "a young dragon-kin humanoid with small horns, a scaled tail, and keen eyes",
+
+  // D&D 5e / Pathfinder 2e / Generic Fantasy (Goblin above is shared)
+  "Human": "a human",
+  "Elf": "an elf with long, pointed ears, fine-boned features, and a graceful, ageless air",
+  "Dwarf": "a dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard",
+  "Halfling": "a halfling, small and nimble, about half the height of a human, with bare, sturdy feet",
+  "Dragonborn": "a dragonborn, a tall draconic humanoid with a scaled, dragon-like head, a snout, and a powerful build, without a tail",
+  "Gnome": "a gnome, very small with a large nose, bright curious eyes, and an animated expression",
+  "Half-Elf": "a half-elf with softly pointed ears and features blending human and elven traits",
+  "Half-Orc": "a half-orc with a strong jaw, small protruding tusks, and a powerful, muscular frame",
+  "Tiefling": "a tiefling with curling horns, a long pointed tail, and solid-coloured eyes",
+  "Aasimar": "an aasimar with an otherworldly beauty, faintly luminous eyes, and a subtle celestial radiance",
+  "Leshy": "a leshy, a small plant creature with a body of bark, leaves, and vines, and a gourd- or flower-like head",
+  "Lizardfolk": "a lizardfolk, a reptilian humanoid with a long snout, sharp teeth, and a thick tail",
+  "Orc": "an orc with prominent tusks, a heavy brow, and a broad, powerful build",
+  "Tengu": "a tengu, a bird-like humanoid with a sharp beak, feathered head, and taloned hands",
+  "Beastfolk": "a beastfolk humanoid with animal features such as fur, a muzzle, and pointed ears",
+  "Undead": "an undead humanoid with gaunt, withered features, hollow cheeks, and an unnatural pallor"
 };
 
-const NO_HAIR_ANCESTRIES = ["Clank", "Ribit", "Galapa", "Fungril", "Infernis", "Drakona", "Wyrmling"];
+// What the "Skin" field describes for ancestries without ordinary skin.
+const SURFACE_LABELS = {
+  "Clank": "Metal plating",
+  "Drakona": "Scales",
+  "Wyrmling": "Scales",
+  "Dragonborn": "Scales",
+  "Lizardfolk": "Scales",
+  "Katari": "Fur",
+  "Tengu": "Feathers",
+  "Leshy": "Bark"
+};
+
+const NO_HAIR_ANCESTRIES = [
+  "Clank", "Ribit", "Galapa", "Fungril", "Infernis", "Drakona", "Wyrmling",
+  "Dragonborn", "Lizardfolk", "Tengu", "Leshy"
+];
 
 // ---------- helpers ----------
 function fillSelect(sel, items) {
@@ -445,12 +662,25 @@ function traitText(id) {
   return $(id).value.toLowerCase();
 }
 
+function surfaceLabel() {
+  return SURFACE_LABELS[$("ancestry").value] || "Skin";
+}
+
+// Hide Hair for hairless ancestries and rename Skin to fit (scales, fur, ...).
+function updateAncestryFields() {
+  $("hair-field").hidden = NO_HAIR_ANCESTRIES.includes($("ancestry").value);
+  const label = surfaceLabel();
+  $("skin-label").textContent = label;
+  $("skin-other").placeholder = `Describe the ${label.toLowerCase()}`;
+}
+
 function refreshAncestries() {
   const ruleset = $("ruleset").value;
   fillSelect($("ancestry"), DATA.ancestries[ruleset]);
   fillSelect($("class"), DATA.classes[ruleset]);
   toggleOther("ancestry", "ancestry-other");
   toggleOther("class", "class-other");
+  updateAncestryFields();
 }
 
 function stripArticle(text) {
@@ -494,14 +724,16 @@ function buildPrompt() {
   sections.push(
     "SUBJECT\n" +
     subject.charAt(0).toUpperCase() + subject.slice(1) + " " +
-    `A character from the ${$("ruleset").value} tabletop RPG.`
+    ($("ruleset").value === "Generic Fantasy"
+      ? "A character from a fantasy tabletop RPG."
+      : `A character from the ${$("ruleset").value} tabletop RPG.`)
   );
 
   const appearance = [];
   const hair = traitText("hair"), eyes = traitText("eyes"), skin = traitText("skin");
   if (!noHair && hair) appearance.push(`hair: ${hair}`);
   if (eyes) appearance.push(`eyes: ${eyes}`);
-  if (skin) appearance.push(`skin: ${skin}`);
+  if (skin) appearance.push(`${surfaceLabel().toLowerCase()}: ${skin}`);
   appearance.push(`expression: ${$("expression").value.toLowerCase()}`);
   if ($("marks").value.trim()) appearance.push(`distinguishing marks: ${$("marks").value.trim()}`);
   sections.push(`APPEARANCE\n${appearance.join(", ")}.`);
@@ -538,8 +770,9 @@ function buildPrompt() {
 function randomize() {
   $("ruleset").value = pick(DATA.rulesets);
   refreshAncestries();
-  $("ancestry").value = pick(DATA.ancestries[$("ruleset").value]);
-  $("class").value = pick(DATA.classes[$("ruleset").value]);
+  $("ancestry").value = pick(DATA.ancestries[$("ruleset").value].filter(a => a !== "Other"));
+  updateAncestryFields();
+  $("class").value = pick(DATA.classes[$("ruleset").value].filter(c => c !== "Other"));
   $("gender").value = pick(DATA.genders);
   $("age").value = pick(DATA.ages);
   $("build").value = pick(DATA.builds);
@@ -574,6 +807,19 @@ function clearAll() {
   buildPrompt();
 }
 
+// ---------- copy ----------
+function copyPrompt(btn) {
+  navigator.clipboard.writeText($("output").value).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+}
+
 // ---------- init ----------
 function init() {
   fillSelect($("ruleset"), DATA.rulesets);
@@ -595,7 +841,10 @@ function init() {
   fillSelect($("style"), DATA.styles);
 
   $("ruleset").addEventListener("change", refreshAncestries);
-  $("ancestry").addEventListener("change", () => toggleOther("ancestry", "ancestry-other"));
+  $("ancestry").addEventListener("change", () => {
+    toggleOther("ancestry", "ancestry-other");
+    updateAncestryFields();
+  });
   $("class").addEventListener("change", () => toggleOther("class", "class-other"));
   FREE_TEXT_TRAITS.forEach(id =>
     $(id).addEventListener("change", () => toggleOther(id, `${id}-other`)));
@@ -607,8 +856,22 @@ function init() {
 
   $("randomize").addEventListener("click", randomize);
   $("clear").addEventListener("click", clearAll);
-  $("copy").addEventListener("click", () => {
-    navigator.clipboard.writeText($("output").value);
+  $("copy").addEventListener("click", () => copyPrompt($("copy")));
+  $("copy-mobile").addEventListener("click", () => copyPrompt($("copy-mobile")));
+
+  // Phone bar: jump to the prompt, or back to the form once the prompt is on screen.
+  const outputPanel = document.querySelector(".panel.output");
+  let outputVisible = false;
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => {
+      outputVisible = entry.isIntersecting;
+      $("jump").textContent = outputVisible ? "Back to form" : "View prompt";
+    }, { threshold: 0.25 }).observe(outputPanel);
+  }
+  $("jump").addEventListener("click", () => {
+    const target = outputVisible ? $("form-panel") : outputPanel;
+    const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
   });
 
   buildPrompt();
