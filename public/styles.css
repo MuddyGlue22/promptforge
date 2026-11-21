@@ -273,7 +273,7 @@ input.other-input.show { display: block; }
 }
 
 /* ---------- copy feedback ---------- */
-#copy.copied, #copy-mobile.copied {
+#copy.copied, #copy-mobile.copied, #share.copied {
   background: linear-gradient(135deg, #b8e07a, #5fbf6a);
   box-shadow: 0 6px 22px rgba(95, 191, 106, 0.4);
 }
@@ -355,3 +355,4 @@ input.other-input.show { display: block; }
   font-weight: 600;
 }
 .back-link:hover { color: var(--gold); }
+#share.copied { color: #10210f; border-color: transparent; }

@@ -132,6 +132,7 @@
     <div class="panel output">
       <div class="toolbar">
         <button type="button" id="copy" class="primary">Copy prompt</button>
+        <button type="button" id="share">Share character</button>
       </div>
       <label>Generated prompt
         <textarea id="output" readonly></textarea>
@@ -517,17 +518,79 @@ function clearAll() {
   buildPrompt();
 }
 
-// ---------- copy ----------
-function copyPrompt(btn) {
-  navigator.clipboard.writeText($("output").value).then(() => {
-    btn.textContent = "Copied!";
-    btn.classList.add("copied");
-    clearTimeout(btn._reset);
-    btn._reset = setTimeout(() => {
-      btn.textContent = "Copy prompt";
-      btn.classList.remove("copied");
-    }, 1600);
+// ---------- settings from the URL ----------
+// e.g. /?ruleset=D%26D+5e&ancestry=Tiefling&class=Warlock&accessories=Amulet,Cloak
+// Used by the gallery's "Try this character" links; unknown keys and values are ignored.
+function applyUrlSettings() {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.toString()) return;
+  const setField = (id, value) => {
+    const el = document.getElementById(id);
+    if (!el || !el.closest("#form-panel")) return;
+    if (el.tagName === "SELECT") {
+      if ([...el.options].some(o => o.value === value)) el.value = value;
+    } else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.value = value;
+    }
+  };
+  if (params.has("ruleset")) {
+    setField("ruleset", params.get("ruleset"));
+    refreshAncestries();
+  }
+  params.forEach((value, key) => {
+    if (key !== "ruleset" && key !== "accessories") setField(key, value);
   });
+  if (params.has("accessories")) {
+    const wanted = params.get("accessories").split(",");
+    document.querySelectorAll("#accessories input").forEach(cb => {
+      cb.checked = wanted.includes(cb.value);
+    });
+  }
+  toggleOther("ancestry", "ancestry-other");
+  toggleOther("class", "class-other");
+  toggleTraitOthers();
+  updateAncestryFields();
+}
+
+// ---------- copy ----------
+// Briefly swap a button's label to confirm an action.
+function flash(btn, message) {
+  if (!btn._label) btn._label = btn.textContent;
+  btn.textContent = message;
+  btn.classList.add("copied");
+  clearTimeout(btn._reset);
+  btn._reset = setTimeout(() => {
+    btn.textContent = btn._label;
+    btn.classList.remove("copied");
+  }, 1600);
+}
+
+function copyPrompt(btn) {
+  navigator.clipboard.writeText($("output").value).then(() => flash(btn, "Copied!"));
+}
+
+// A link that reopens the builder with the current character (read by applyUrlSettings).
+function shareUrl() {
+  const params = new URLSearchParams();
+  document.querySelectorAll("#form-panel select, #form-panel input[type=text], #form-panel textarea")
+    .forEach(el => {
+      if (!el.id) return;
+      const value = el.tagName === "SELECT" ? el.value : el.value.trim();
+      if (value) params.set(el.id, value);
+    });
+  const accessories = [...document.querySelectorAll("#accessories input:checked")].map(cb => cb.value);
+  if (accessories.length) params.set("accessories", accessories.join(","));
+  return `${window.location.origin}${window.location.pathname}?${params}`;
+}
+
+// Phones get the native share sheet; everything else copies the link.
+function shareCharacter(btn) {
+  const url = shareUrl();
+  if (navigator.share && window.matchMedia("(pointer: coarse)").matches) {
+    navigator.share({ title: "My character – Tavern Portraits", url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url).then(() => flash(btn, "Link copied!"));
+  }
 }
 
 // ---------- init ----------
@@ -569,6 +632,7 @@ function init() {
   $("clear").addEventListener("click", clearAll);
   $("copy").addEventListener("click", () => copyPrompt($("copy")));
   $("copy-mobile").addEventListener("click", () => copyPrompt($("copy-mobile")));
+  $("share").addEventListener("click", () => shareCharacter($("share")));
 
   // Phone bar: jump to the prompt, or back to the form once the prompt is on screen.
   const outputPanel = document.querySelector(".panel.output");
@@ -585,6 +649,7 @@ function init() {
     target.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
   });
 
+  applyUrlSettings();
   buildPrompt();
 }
 
