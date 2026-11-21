@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.linkedEditing": true,
+  "files.autoSave": "onFocusChange",
+  "emmet.triggerExpansionOnTab": true,
+  "liveServer.settings.donotShowInfoMsg": true
+}

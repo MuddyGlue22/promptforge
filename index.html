@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PromptForge - TTRPG Character Image Prompt Builder</title>
+<meta name="description" content="Build a structured AI image prompt for a tabletop RPG character.">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #14110e;
+    color: #1c1612;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 18px 60px;
+  }
+  header {
+    color: #f6efe6;
+    margin-bottom: 24px;
+  }
+  .eyebrow {
+    margin: 0 0 6px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #c9843a;
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: normal;
+  }
+  header p {
+    max-width: 600px;
+    color: #d9cbbd;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .panel {
+    flex: 1 1 480px;
+    background: #f6f0e6;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  .panel.output {
+    flex: 1 1 360px;
+    position: sticky;
+    top: 16px;
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  button {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 20px;
+    cursor: pointer;
+    background: #e2d8c8;
+    color: #1c1612;
+  }
+  button.primary {
+    background: #7a3e1d;
+    color: #f6efe6;
+  }
+  button:hover { filter: brightness(0.96); }
+  .section-title {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #7d6a58;
+    border-bottom: 1px solid #d6c9b8;
+    padding-bottom: 6px;
+    margin: 22px 0 14px;
+  }
+  label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 14px;
+    color: #3a2f26;
+  }
+  select, input[type=text], textarea {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    border: 1px solid #c9bba9;
+    border-radius: 10px;
+    background: #fffdf9;
+    color: #1c1612;
+  }
+  textarea {
+    min-height: 260px;
+    resize: vertical;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .other-input {
+    margin-top: 8px;
+    display: none;
+  }
+  .other-input.show { display: block; }
+  .checks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  .checks label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    background: #fffdf9;
+    border: 1px solid #d6c9b8;
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+  @media (max-width: 700px) {
+    h1 { font-size: 34px; }
+    .panel { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">PromptForge</p>
+    <h1>Character Image Prompt Builder</h1>
+    <p>Choose a ruleset, ancestry, class, setting, and gear, then copy a structured prompt for your image generator.</p>
+  </header>
+
+  <div class="layout">
+    <div class="panel" id="form-panel">
+      <div class="toolbar">
+        <button type="button" id="randomize" class="primary">Randomize</button>
+        <button type="button" id="clear">Clear</button>
+      </div>
+
+      <div class="section-title">Character</div>
+
+      <label>Ruleset
+        <select id="ruleset"></select>
+      </label>
+
+      <label>Ancestry
+        <select id="ancestry"></select>
+        <input type="text" id="ancestry-other" class="other-input" placeholder="Describe the ancestry">
+      </label>
+
+      <label>Class
+        <select id="class"></select>
+        <input type="text" id="class-other" class="other-input" placeholder="Describe the class">
+      </label>
+
+      <label>Gender
+        <select id="gender"></select>
+      </label>
+
+      <label>Age
+        <select id="age"></select>
+      </label>
+
+      <label>Build
+        <select id="build"></select>
+      </label>
+
+      <div class="section-title">Appearance</div>
+
+      <label>Hair
+        <select id="hair"></select>
+      </label>
+
+      <label>Eyes
+        <select id="eyes"></select>
+      </label>
+
+      <label>Skin
+        <select id="skin"></select>
+      </label>
+
+      <label>Distinguishing marks
+        <input type="text" id="marks" placeholder="Scars, tattoos, horns, etc.">
+      </label>
+
+      <div class="section-title">Gear</div>
+
+      <label>Weapon
+        <select id="weapon"></select>
+      </label>
+
+      <label>Armour
+        <select id="armour"></select>
+      </label>
+
+      <label>Accessories
+        <div class="checks" id="accessories"></div>
+      </label>
+
+      <div class="section-title">Scene</div>
+
+      <label>Setting
+        <select id="setting"></select>
+      </label>
+
+      <label>Lighting
+        <select id="lighting"></select>
+      </label>
+
+      <label>Pose
+        <select id="pose"></select>
+      </label>
+
+      <label>Art style
+        <select id="style"></select>
+      </label>
+
+      <label>Extra notes
+        <textarea id="notes" style="min-height:90px" placeholder="Anything else to include in the prompt"></textarea>
+      </label>
+    </div>
+
+    <div class="panel output">
+      <div class="toolbar">
+        <button type="button" id="copy" class="primary">Copy prompt</button>
+      </div>
+      <label>Generated prompt
+        <textarea id="output" readonly></textarea>
+      </label>
+    </div>
+  </div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+
+// ---------- data ----------
+const DATA = {
+  rulesets: ["Daggerheart", "D&D 5e", "Pathfinder 2e", "Generic Fantasy"],
+
+  ancestries: {
+    "Daggerheart": [
+      "Clank", "Ribit", "Katari", "Drakona", "Faerie", "Fungril",
+      "Galapa", "Giant", "Goblin", "Greataxe Orc", "Infernis",
+      "Simiah", "Seraph", "Wyrmling", "Other"
+    ],
+    "D&D 5e": [
+      "Human", "Elf", "Dwarf", "Halfling", "Dragonborn", "Gnome",
+      "Half-Elf", "Half-Orc", "Tiefling", "Aasimar", "Other"
+    ],
+    "Pathfinder 2e": [
+      "Human", "Elf", "Dwarf", "Gnome", "Goblin", "Halfling",
+      "Leshy", "Lizardfolk", "Orc", "Tengu", "Other"
+    ],
+    "Generic Fantasy": [
+      "Human", "Elf", "Dwarf", "Orc", "Beastfolk", "Undead", "Other"
+    ]
+  },
+
+  classes: {
+    "Daggerheart": [
+      "Bard", "Druid", "Guardian", "Ranger", "Rogue", "Seraph",
+      "Sorcerer", "Warrior", "Wizard", "Other"
+    ],
+    "D&D 5e": [
+      "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk",
+      "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Other"
+    ],
+    "Pathfinder 2e": [
+      "Alchemist", "Barbarian", "Bard", "Champion", "Cleric", "Druid",
+      "Fighter", "Monk", "Ranger", "Rogue", "Sorcerer", "Wizard", "Other"
+    ],
+    "Generic Fantasy": [
+      "Warrior", "Ranger", "Rogue", "Wizard", "Sorcerer", "Cleric",
+      "Druid", "Bard", "Paladin", "Monk", "Barbarian", "Other"
+    ]
+  },
+
+  genders: ["Male", "Female", "Non-binary", "Androgynous"],
+  ages: ["Young", "Adult", "Middle-aged", "Elderly", "Ageless"],
+  builds: ["Slender", "Athletic", "Stocky", "Heavy", "Lanky", "Muscular"],
+  hairs: ["Black", "Brown", "Blonde", "Red", "White", "Silver", "Blue", "Green", "Bald", "Shaved"],
+  eyes: ["Brown", "Blue", "Green", "Amber", "Violet", "Gold", "Red", "Glowing", "Heterochromatic"],
+  skins: ["Pale", "Fair", "Olive", "Tan", "Brown", "Dark", "Blue", "Green", "Grey", "Scaled"],
+  weapons: [
+    "None visible", "Longsword", "Greataxe", "Warhammer", "Shortbow", "Longbow",
+    "Staff", "Rapier", "Dagger pair", "Crossbow", "Glaive", "Spellbook"
+  ],
+  armours: [
+    "Cloth robes", "Leather", "Studded leather", "Chain shirt", "Scale mail",
+    "Plate", "Half plate", "Light cloak", "Ceremonial vestments", "None"
+  ],
+  accessories: [
+    "Cloak", "Hood", "Pauldron", "Gauntlets", "Circlet", "Amulet",
+    "Satchel", "Tabard", "Eye patch", "Scarf", "Spectacles", "Feathered cap"
+  ],
+  settings: [
+    "Dungeon", "Forest", "Ruined city", "Tavern", "Mountain pass",
+    "Desert ruins", "Frozen tundra", "Swamp", "Castle courtyard", "Plain studio backdrop"
+  ],
+  lightings: [
+    "Soft natural light", "Dramatic side light", "Warm firelight", "Moonlight",
+    "Overcast daylight", "Magical glow", "Rim light", "Studio lighting"
+  ],
+  poses: [
+    "Standing heroically", "Mid-action", "Crouched and alert", "Arms crossed",
+    "Leaning on weapon", "Casting a spell", "Looking over shoulder", "Relaxed stance"
+  ],
+  styles: [
+    "Painterly fantasy illustration", "Dark fantasy painting", "Watercolour",
+    "Digital concept art", "Ink and wash", "Classic oil painting", "Anime-inspired"
+  ]
+};
+
+// Full descriptions used in the generated prompt (not shown in the dropdown)
+const CLASS_DETAILS = {
+  "Bard": "a charismatic performer and storyteller who uses song, words, or wit to shape the world around them",
+  "Druid": "a nature-attuned spellcaster with a deep connection to the wild and its cycles",
+  "Guardian": "a steadfast protector whose primary role is to shield allies and hold the line",
+  "Ranger": "a wilderness tracker and hunter, at home on the road and skilled at reading the land",
+  "Rogue": "a nimble and cunning operative who relies on stealth, quick thinking, and precise strikes",
+  "Seraph": "a celestial champion who draws power from a higher, divine source",
+  "Sorcerer": "an innate spellcaster whose magic comes from within, shaped by heritage or bloodline",
+  "Warrior": "a battle-hardened fighter whose skill and discipline are built through years of combat",
+  "Wizard": "a scholarly arcane practitioner who gains power through study and mastery of magical theory",
+  "Barbarian": "a fierce warrior who draws strength from primal rage and endurance",
+  "Cleric": "a devoted servant of a divine power who channels faith into healing and protection",
+  "Fighter": "a versatile and skilled combatant who excels through training and tactical ability",
+  "Monk": "a disciplined martial artist who channels inner energy and focus into their strikes",
+  "Paladin": "a holy warrior bound by a sacred oath, who fights for a cause greater than themselves",
+  "Warlock": "a wielder of pact magic, bound by a bargain with an otherworldly patron",
+  "Alchemist": "an inventor and experimenter who creates elixirs, bombs, and other mixtures",
+  "Champion": "a dedicated holy warrior who stands for a cause and defends the innocent"
+};
+
+const ANCESTRY_DETAILS = {
+  "Clank": "a sentient, mechanical being of metal and gears, with visible rivets, hinges, and a glowing core",
+  "Ribit": "a frog-like humanoid with smooth, damp skin, large eyes, and webbed hands and feet",
+  "Katari": "a feline humanoid with fur, whiskers, and retractable claws",
+  "Drakona": "a draconic humanoid with scales, horns, and a tail",
+  "Faerie": "a small winged fey with translucent wings and luminous features",
+  "Fungril": "a mushroom-folk humanoid with a cap of fungus instead of hair and spore-dusted skin",
+  "Galapa": "a turtle-like humanoid with a hard shell on the back and a slow, deliberate manner",
+  "Giant": "a towering humanoid, many times the height of a person",
+  "Goblin": "a small, quick-witted humanoid with large ears and sharp features",
+  "Greataxe Orc": "a muscular orc-like humanoid, heavily built and tusked",
+  "Infernis": "a fiend-touched humanoid with horns, ember-colored eyes, and dark skin",
+  "Simiah": "an ape-like humanoid with long arms, a thick brow, and expressive features",
+  "Seraph": "a celestial humanoid with feathered wings and a radiant bearing",
+  "Wyrmling": "a young dragon-kin humanoid with small horns, a scaled tail, and keen eyes"
+};
+
+const NO_HAIR_ANCESTRIES = ["Clank", "Ribit", "Galapa", "Fungril", "Infernis", "Drakona", "Wyrmling"];
+
+// ---------- helpers ----------
+function fillSelect(sel, items) {
+  sel.innerHTML = "";
+  items.forEach(item => {
+    const opt = document.createElement("option");
+    opt.value = item;
+    opt.textContent = item;
+    sel.appendChild(opt);
+  });
+}
+
+function fillChecks(container, items) {
+  container.innerHTML = "";
+  items.forEach(item => {
+    const label = document.createElement("label");
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.value = item;
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(item));
+    container.appendChild(label);
+  });
+}
+
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function indefinite(word) {
+  return /^[aeiou]/i.test(word) ? "an" : "a";
+}
+
+function toggleOther(selectId, inputId) {
+  const isOther = $(selectId).value === "Other";
+  $(inputId).classList.toggle("show", isOther);
+}
+
+function refreshAncestries() {
+  const ruleset = $("ruleset").value;
+  fillSelect($("ancestry"), DATA.ancestries[ruleset]);
+  fillSelect($("class"), DATA.classes[ruleset]);
+  toggleOther("ancestry", "ancestry-other");
+  toggleOther("class", "class-other");
+}
+
+function ancestryText() {
+  const choice = $("ancestry").value;
+  if (choice === "Other") return $("ancestry-other").value.trim() || "a unique ancestry";
+  return ANCESTRY_DETAILS[choice] || choice;
+}
+
+function classDescription() {
+  const choice = $("class").value;
+  if (choice === "Other") {
+    return $("class-other").value.trim() || "a unique adventurer";
+  }
+  return CLASS_DETAILS[choice] || choice.toLowerCase();
+}
+
+// ---------- prompt building ----------
+function buildPrompt() {
+  const selectedAccessories = [...$("accessories").querySelectorAll("input:checked")]
+    .map(cb => cb.value);
+
+  const ancestry = ancestryText();
+  const classDesc = classDescription();
+  const noHair = NO_HAIR_ANCESTRIES.includes($("ancestry").value);
+
+  const sections = [];
+
+  sections.push(
+    "SUBJECT\n" +
+    `${indefinite($("age").value)} ${$("age").value.toLowerCase()} ${$("gender").value.toLowerCase()} ` +
+    `${$("build").value.toLowerCase()} ${ancestry}, portrayed as ${classDesc}. ` +
+    `From the ${$("ruleset").value} tabletop RPG.`
+  );
+
+  const appearance = [];
+  if (!noHair) appearance.push(`hair: ${$("hair").value.toLowerCase()}`);
+  appearance.push(`eyes: ${$("eyes").value.toLowerCase()}`);
+  appearance.push(`skin: ${$("skin").value.toLowerCase()}`);
+  if ($("marks").value.trim()) appearance.push(`distinguishing marks: ${$("marks").value.trim()}`);
+  sections.push(`APPEARANCE\n${appearance.join(", ")}.`);
+  
+  const weapon = $("weapon").value;
+  const handsPart = weapon === "None visible" ? "empty hands" : `carrying ${weapon.toLowerCase()}`;
+  const accessories = [...$("accessories").querySelectorAll("input:checked")].map(cb => cb.value);
+  const gear = [`wearing ${$("armour").value.toLowerCase()}`, handsPart];
+  if (accessories.length) gear.push(`accessories: ${accessories.join(", ").toLowerCase()}`);
+  sections.push(`GEAR\n${gear.join(", ")}.`);
+
+  sections.push(
+    "SCENE\n" +
+    `Pose: ${$("pose").value.toLowerCase()}. ` +
+    `Setting: ${$("setting").value.toLowerCase()}. ` +
+    `Lighting: ${$("lighting").value.toLowerCase()}.`
+  );
+
+  sections.push(`STYLE\n${$("style").value}.`);
+
+  if ($("notes").value.trim()) sections.push(`NOTES\n${$("notes").value.trim()}`);
+
+  $("output").value = "Generate an image.\n\n" + sections.join("\n\n");
+}
+
+// ---------- randomise / clear ----------
+function randomize() {
+  $("ruleset").value = pick(DATA.rulesets);
+  refreshAncestries();
+  $("ancestry").value = pick(DATA.ancestries[$("ruleset").value]);
+  $("class").value = pick(DATA.classes[$("ruleset").value]);
+  $("gender").value = pick(DATA.genders);
+  $("age").value = pick(DATA.ages);
+  $("build").value = pick(DATA.builds);
+  $("hair").value = pick(DATA.hairs);
+  $("eyes").value = pick(DATA.eyes);
+  $("skin").value = pick(DATA.skins);
+  $("weapon").value = pick(DATA.weapons);
+  $("armour").value = pick(DATA.armours);
+  $("setting").value = pick(DATA.settings);
+  $("lighting").value = pick(DATA.lightings);
+  $("pose").value = pick(DATA.poses);
+  $("style").value = pick(DATA.styles);
+  document.querySelectorAll("#accessories input").forEach(cb => {
+    cb.checked = Math.random() < 0.25;
+  });
+  toggleOther("ancestry", "ancestry-other");
+  toggleOther("class", "class-other");
+  buildPrompt();
+}
+
+function clearAll() {
+  document.querySelectorAll("input[type=text], textarea").forEach(el => el.value = "");
+  document.querySelectorAll("#accessories input").forEach(cb => cb.checked = false);
+  document.querySelectorAll("select").forEach(sel => sel.selectedIndex = 0);
+  refreshAncestries();
+  toggleOther("ancestry", "ancestry-other");
+  toggleOther("class", "class-other");
+  buildPrompt();
+}
+
+// ---------- init ----------
+function init() {
+  fillSelect($("ruleset"), DATA.rulesets);
+  refreshAncestries();
+  fillSelect($("gender"), DATA.genders);
+  fillSelect($("age"), DATA.ages);
+  fillSelect($("build"), DATA.builds);
+  fillSelect($("hair"), DATA.hairs);
+  fillSelect($("eyes"), DATA.eyes);
+  fillSelect($("skin"), DATA.skins);
+  fillSelect($("weapon"), DATA.weapons);
+  fillSelect($("armour"), DATA.armours);
+  fillChecks($("accessories"), DATA.accessories);
+  fillSelect($("setting"), DATA.settings);
+  fillSelect($("lighting"), DATA.lightings);
+  fillSelect($("pose"), DATA.poses);
+  fillSelect($("style"), DATA.styles);
+
+  $("ruleset").addEventListener("change", refreshAncestries);
+  $("ancestry").addEventListener("change", () => toggleOther("ancestry", "ancestry-other"));
+  $("class").addEventListener("change", () => toggleOther("class", "class-other"));
+
+  document.querySelectorAll("#form-panel select, #form-panel input, #form-panel textarea")
+    .forEach(el => el.addEventListener("input", buildPrompt));
+  document.querySelectorAll("#form-panel select").forEach(el => el.addEventListener("change", buildPrompt));
+  document.querySelectorAll("#accessories input").forEach(cb => cb.addEventListener("change", buildPrompt));
+
+  $("randomize").addEventListener("click", randomize);
+  $("clear").addEventListener("click", clearAll);
+  $("copy").addEventListener("click", () => {
+    navigator.clipboard.writeText($("output").value);
+  });
+
+  buildPrompt();
+}
+
+init();
+</script>
+</body>
+</html>
