@@ -6,5 +6,6 @@
   "editor.linkedEditing": true,
   "files.autoSave": "onFocusChange",
   "emmet.triggerExpansionOnTab": true,
-  "liveServer.settings.donotShowInfoMsg": true
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.root": "/public"
 }
