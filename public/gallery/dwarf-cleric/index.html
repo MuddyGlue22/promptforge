@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dwarf Cleric – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Dwarf Cleric AI portrait made with Seedream 5.5: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/dwarf-cleric/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Dwarf Cleric – AI character portrait and prompt">
+<meta property="og:description" content="Dwarf Cleric AI portrait made with Seedream 5.5: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/dwarf-cleric/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/05-dwarf-cleric-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Dwarf Cleric</h1>
+    <p>Built with the Tavern Portraits prompt builder (D&amp;D 5e ruleset), then generated with Seedream 5.5.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/05-dwarf-cleric-full.webp" width="832" height="1248" alt="AI-generated oil painting of a red-bearded dwarf cleric in chain mail with a glowing holy symbol and a warhammer on a mountain pass">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">Seedream 5.5</span>
+        <span class="chip">Classic oil painting</span>
+        <span class="chip">Full body</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">A convincing classic oil painting: braided red beard, a glowing holy symbol and a soft divine light in the open hand. The grim expression and mountain pass match the prompt closely.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+A middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a cleric, with a prominently displayed holy symbol, vestments worn over armour, and a soft divine glow. A fantasy tabletop RPG character.
+
+APPEARANCE
+hair: red, eyes: brown, skin: fair, expression: grim.
+
+GEAR
+wearing chain shirt, carrying warhammer, accessories: amulet, cloak.
+
+SCENE
+Framing: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: mountain pass. Lighting: dramatic side light.
+
+STYLE
+Classic oil painting.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=D%26D+5e&amp;ancestry=Dwarf&amp;class=Cleric&amp;gender=Male&amp;age=Middle-aged&amp;build=Stocky&amp;hair=Red&amp;eyes=Brown&amp;skin=Fair&amp;expression=Grim&amp;weapon=Warhammer&amp;armour=Chain+shirt&amp;accessories=Amulet%2CCloak&amp;framing=Full+body&amp;setting=Mountain+pass&amp;lighting=Dramatic+side+light&amp;pose=Standing+heroically&amp;style=Classic+oil+painting&amp;target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>D&amp;D 5e</dd>
+        <dt>Ancestry</dt><dd>Dwarf</dd>
+        <dt>Class</dt><dd>Cleric</dd>
+        <dt>Gender</dt><dd>Male</dd>
+        <dt>Age</dt><dd>Middle-aged</dd>
+        <dt>Build</dt><dd>Stocky</dd>
+        <dt>Hair</dt><dd>Red</dd>
+        <dt>Eyes</dt><dd>Brown</dd>
+        <dt>Skin</dt><dd>Fair</dd>
+        <dt>Expression</dt><dd>Grim</dd>
+        <dt>Weapon</dt><dd>Warhammer</dd>
+        <dt>Armour</dt><dd>Chain shirt</dd>
+        <dt>Accessories</dt><dd>Amulet, Cloak</dd>
+        <dt>Framing</dt><dd>Full body</dd>
+        <dt>Setting</dt><dd>Mountain pass</dd>
+        <dt>Lighting</dt><dd>Dramatic side light</dd>
+        <dt>Pose</dt><dd>Standing heroically</dd>
+        <dt>Art style</dt><dd>Classic oil painting</dd>
+        <dt>Image model</dt><dd>Most models (GPT Image, Seedream, etc.)</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/tiefling-warlock/">&larr; Tiefling Warlock</a>
+    <a href="/gallery/dragonborn-paladin/">Dragonborn Paladin &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as Seedream 5.5 produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

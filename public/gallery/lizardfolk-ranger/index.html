@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lizardfolk Ranger – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Lizardfolk Ranger AI portrait made with MOSS Image: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/lizardfolk-ranger/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Lizardfolk Ranger – AI character portrait and prompt">
+<meta property="og:description" content="Lizardfolk Ranger AI portrait made with MOSS Image: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/lizardfolk-ranger/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/10-lizardfolk-ranger-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Lizardfolk Ranger</h1>
+    <p>Built with the Tavern Portraits prompt builder (Pathfinder 2e ruleset), then generated with MOSS Image.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/10-lizardfolk-ranger-full.webp" width="1200" height="1800" alt="AI-generated painting of a hooded green lizardfolk ranger with a longbow and quiver, crouched in a misty swamp">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">MOSS Image</span>
+        <span class="chip">Painterly fantasy illustration</span>
+        <span class="chip">Full body</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">Hood, longbow, quiver and thick tail are all there, crouched and alert in a misty swamp. This prompt uses the builder’s FLUX wording but was generated with MOSS Image.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An adult, athletic female lizardfolk, a reptilian humanoid with a long snout, sharp teeth, and a thick tail, portrayed as a ranger, in weathered, earth-toned travel layers, with a quiver, a hunting knife, and road-worn boots. A fantasy tabletop RPG character.
+
+APPEARANCE
+eyes: gold, scales: green, expression: wary.
+
+GEAR
+wearing studded leather, carrying longbow, accessories: hood.
+
+SCENE
+Framing: full-body shot, the entire character visible from head to toe. Pose: crouched and alert. Setting: swamp. Lighting: overcast daylight.
+
+STYLE
+Painterly fantasy illustration.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. Clean, unmarked artwork: the corners and edges show only the scene itself.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Pathfinder+2e&amp;ancestry=Lizardfolk&amp;class=Ranger&amp;gender=Female&amp;age=Adult&amp;build=Athletic&amp;eyes=Gold&amp;skin=Green&amp;expression=Wary&amp;weapon=Longbow&amp;armour=Studded+leather&amp;accessories=Hood&amp;framing=Full+body&amp;setting=Swamp&amp;lighting=Overcast+daylight&amp;pose=Crouched+and+alert&amp;style=Painterly+fantasy+illustration&amp;target-model=FLUX">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Pathfinder 2e</dd>
+        <dt>Ancestry</dt><dd>Lizardfolk</dd>
+        <dt>Class</dt><dd>Ranger</dd>
+        <dt>Gender</dt><dd>Female</dd>
+        <dt>Age</dt><dd>Adult</dd>
+        <dt>Build</dt><dd>Athletic</dd>
+        <dt>Eyes</dt><dd>Gold</dd>
+        <dt>Scales</dt><dd>Green</dd>
+        <dt>Expression</dt><dd>Wary</dd>
+        <dt>Weapon</dt><dd>Longbow</dd>
+        <dt>Armour</dt><dd>Studded leather</dd>
+        <dt>Accessories</dt><dd>Hood</dd>
+        <dt>Framing</dt><dd>Full body</dd>
+        <dt>Setting</dt><dd>Swamp</dd>
+        <dt>Lighting</dt><dd>Overcast daylight</dd>
+        <dt>Pose</dt><dd>Crouched and alert</dd>
+        <dt>Art style</dt><dd>Painterly fantasy illustration</dd>
+        <dt>Image model</dt><dd>FLUX</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/tengu-alchemist/">&larr; Tengu Alchemist</a>
+    <a href="/gallery/undead-wizard/">Undead Wizard &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as MOSS Image produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

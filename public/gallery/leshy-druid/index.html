@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leshy Druid – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Leshy Druid AI portrait made with GPT Image: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/leshy-druid/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Leshy Druid – AI character portrait and prompt">
+<meta property="og:description" content="Leshy Druid AI portrait made with GPT Image: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/leshy-druid/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/08-leshy-druid-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Leshy Druid</h1>
+    <p>Built with the Tavern Portraits prompt builder (Pathfinder 2e ruleset), then generated with GPT Image.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/08-leshy-druid-full.webp" width="1024" height="1536" alt="AI-generated watercolour of a leshy druid with a flower-shaped head and a body of moss, bark and leaves, holding a staff in a swamp">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">GPT Image</span>
+        <span class="chip">Watercolour</span>
+        <span class="chip">Full body</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">One of the most faithful results in the set: a flower-headed plant creature of moss, bark and blossoms, with staff and satchel, in soft watercolour over a misty swamp.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An ageless, slender androgynous leshy, a small plant creature with a body of bark, leaves, and vines, and a gourd- or flower-like head, portrayed as a druid, dressed in natural materials like leaves, bark, and bone, with moss or vines woven into their gear. A fantasy tabletop RPG character.
+
+APPEARANCE
+eyes: green, bark: mossy oak with small white blossoms, expression: serene.
+
+GEAR
+wearing none, carrying staff, accessories: satchel.
+
+SCENE
+Framing: full-body shot, the entire character visible from head to toe. Pose: relaxed stance. Setting: swamp. Lighting: soft natural light.
+
+STYLE
+Watercolour.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Pathfinder+2e&amp;ancestry=Leshy&amp;class=Druid&amp;gender=Androgynous&amp;age=Ageless&amp;build=Slender&amp;eyes=Green&amp;skin=Other&amp;skin-other=mossy+oak+with+small+white+blossoms&amp;expression=Serene&amp;weapon=Staff&amp;armour=None&amp;accessories=Satchel&amp;framing=Full+body&amp;setting=Swamp&amp;lighting=Soft+natural+light&amp;pose=Relaxed+stance&amp;style=Watercolour&amp;target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Pathfinder 2e</dd>
+        <dt>Ancestry</dt><dd>Leshy</dd>
+        <dt>Class</dt><dd>Druid</dd>
+        <dt>Gender</dt><dd>Androgynous</dd>
+        <dt>Age</dt><dd>Ageless</dd>
+        <dt>Build</dt><dd>Slender</dd>
+        <dt>Eyes</dt><dd>Green</dd>
+        <dt>Bark</dt><dd>mossy oak with small white blossoms</dd>
+        <dt>Expression</dt><dd>Serene</dd>
+        <dt>Weapon</dt><dd>Staff</dd>
+        <dt>Armour</dt><dd>None</dd>
+        <dt>Accessories</dt><dd>Satchel</dd>
+        <dt>Framing</dt><dd>Full body</dd>
+        <dt>Setting</dt><dd>Swamp</dd>
+        <dt>Lighting</dt><dd>Soft natural light</dd>
+        <dt>Pose</dt><dd>Relaxed stance</dd>
+        <dt>Art style</dt><dd>Watercolour</dd>
+        <dt>Image model</dt><dd>Most models (GPT Image, Seedream, etc.)</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/halfling-bard/">&larr; Halfling Bard</a>
+    <a href="/gallery/tengu-alchemist/">Tengu Alchemist &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as GPT Image produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

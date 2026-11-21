@@ -356,3 +356,137 @@ input.other-input.show { display: block; }
 }
 .back-link:hover { color: var(--gold); }
 #share.copied { color: #10210f; border-color: transparent; }
+
+/* ---------- gallery ---------- */
+.ai-note { color: var(--muted); font-size: 14px; margin: 6px 0 0; }
+.inline-link { color: var(--ember); }
+.inline-link:hover { color: var(--gold); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.filters button { padding: 8px 16px; font-size: 14px; }
+.filters button[aria-pressed="true"] {
+  border-color: var(--ember);
+  background: rgba(255, 122, 47, 0.14);
+  color: var(--gold);
+}
+/* Masonry columns: every image keeps its own shape, nothing is cropped. */
+.grid { columns: 3 260px; column-gap: 18px; }
+.card {
+  display: inline-block; /* keeps margins from spilling into the next column */
+  width: 100%;
+  margin: 0 0 18px;
+  break-inside: avoid;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover, .card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--ember);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 18px rgba(255, 122, 47, 0.18);
+}
+.card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.card img { display: block; width: 100%; height: auto; background: var(--input); }
+.card-body { display: block; padding: 12px 14px 14px; }
+.card-title {
+  display: block;
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line-hi);
+  color: var(--muted);
+}
+.chip.model { border-color: rgba(255, 122, 47, 0.5); color: var(--ember); }
+
+/* ---------- character page ---------- */
+.breadcrumb { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+.breadcrumb a { color: var(--ember); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold); }
+.character {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.character-img {
+  margin: 0;
+  border: 1px solid var(--line-hi);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--input);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.character-img img { display: block; width: 100%; height: auto; }
+.character-info .chips { margin-bottom: 18px; }
+.character-info h2 {
+  font-family: var(--display);
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  margin: 24px 0 10px;
+}
+.character-info h2:first-of-type { margin-top: 0; }
+.note { font-size: 16px; line-height: 1.7; color: #e6d9cb; margin: 0; }
+.prompt {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  white-space: pre-wrap;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #f1dfc9;
+  background: var(--input);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  color: #1a0c05;
+  background: linear-gradient(135deg, var(--gold), var(--ember) 45%, var(--flame));
+  box-shadow: 0 6px 22px var(--glow);
+}
+a.button:hover { filter: brightness(1.05); }
+#copy-prompt.copied {
+  border-color: transparent;
+  background: linear-gradient(135deg, #b8e07a, #5fbf6a);
+  color: #10210f;
+}
+.settings {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  margin: 0;
+  font-size: 14px;
+}
+.settings dt { color: var(--muted); }
+.settings dd { margin: 0; color: var(--text); }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+  font-size: 15px;
+}
+.pager a { color: var(--ember); text-decoration: none; font-weight: 600; }
+.pager a:hover { color: var(--gold); }
+@media (max-width: 760px) {
+  .character { grid-template-columns: 1fr; }
+}

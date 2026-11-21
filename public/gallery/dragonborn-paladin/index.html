@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dragonborn Paladin – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Dragonborn Paladin AI portrait made with FLUX: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/dragonborn-paladin/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Dragonborn Paladin – AI character portrait and prompt">
+<meta property="og:description" content="Dragonborn Paladin AI portrait made with FLUX: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/dragonborn-paladin/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/06-dragonborn-paladin-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Dragonborn Paladin</h1>
+    <p>Built with the Tavern Portraits prompt builder (D&amp;D 5e ruleset), then generated with FLUX.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/06-dragonborn-paladin-full.webp" width="832" height="1248" alt="AI-generated concept art of a horned bronze dragonborn paladin in polished plate armour holding a longsword among desert ruins">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">FLUX</span>
+        <span class="chip">Digital concept art</span>
+        <span class="chip">Three-quarter</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">Polished plate, rim light and the desert ruins are spot on, but FLUX ignored “without a tail” and gave him one anyway. There is also a small red mark in the bottom-right corner, which FLUX tends to add; shown as generated.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An adult, muscular male dragonborn, a tall draconic humanoid with a scaled, dragon-like head, a snout, and a powerful build, without a tail, portrayed as a paladin, in polished armour bearing a sacred emblem, with a tabard and an air of righteous resolve. A fantasy tabletop RPG character.
+
+APPEARANCE
+eyes: amber, scales: burnished bronze, expression: determined.
+
+GEAR
+wearing plate, carrying longsword, accessories: cloak.
+
+SCENE
+Framing: three-quarter shot, framed from the knees up. Pose: leaning on weapon. Setting: desert ruins. Lighting: rim light.
+
+STYLE
+Digital concept art.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. Clean, unmarked artwork: the corners and edges show only the scene itself.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=D%26D+5e&amp;ancestry=Dragonborn&amp;class=Paladin&amp;gender=Male&amp;age=Adult&amp;build=Muscular&amp;eyes=Amber&amp;skin=Other&amp;skin-other=burnished+bronze&amp;expression=Determined&amp;weapon=Longsword&amp;armour=Plate&amp;accessories=Cloak&amp;framing=Three-quarter&amp;setting=Desert+ruins&amp;lighting=Rim+light&amp;pose=Leaning+on+weapon&amp;style=Digital+concept+art&amp;target-model=FLUX">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>D&amp;D 5e</dd>
+        <dt>Ancestry</dt><dd>Dragonborn</dd>
+        <dt>Class</dt><dd>Paladin</dd>
+        <dt>Gender</dt><dd>Male</dd>
+        <dt>Age</dt><dd>Adult</dd>
+        <dt>Build</dt><dd>Muscular</dd>
+        <dt>Eyes</dt><dd>Amber</dd>
+        <dt>Scales</dt><dd>burnished bronze</dd>
+        <dt>Expression</dt><dd>Determined</dd>
+        <dt>Weapon</dt><dd>Longsword</dd>
+        <dt>Armour</dt><dd>Plate</dd>
+        <dt>Accessories</dt><dd>Cloak</dd>
+        <dt>Framing</dt><dd>Three-quarter</dd>
+        <dt>Setting</dt><dd>Desert ruins</dd>
+        <dt>Lighting</dt><dd>Rim light</dd>
+        <dt>Pose</dt><dd>Leaning on weapon</dd>
+        <dt>Art style</dt><dd>Digital concept art</dd>
+        <dt>Image model</dt><dd>FLUX</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/dwarf-cleric/">&larr; Dwarf Cleric</a>
+    <a href="/gallery/halfling-bard/">Halfling Bard &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as FLUX produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

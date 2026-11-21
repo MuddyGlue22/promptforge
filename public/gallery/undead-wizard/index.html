@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Undead Wizard – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Undead Wizard AI portrait made with Seedream 4.5: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/undead-wizard/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Undead Wizard – AI character portrait and prompt">
+<meta property="og:description" content="Undead Wizard AI portrait made with Seedream 4.5: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/undead-wizard/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/11-undead-wizard-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Undead Wizard</h1>
+    <p>Built with the Tavern Portraits prompt builder (Generic Fantasy ruleset), then generated with Seedream 4.5.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/11-undead-wizard-full.webp" width="1200" height="2134" alt="AI-generated dark fantasy portrait of a gaunt elderly wizard with glowing eyes, a gold circlet and an open spellbook surrounded by floating sigils">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">Seedream 4.5</span>
+        <span class="chip">Dark fantasy painting</span>
+        <span class="chip">Portrait</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">Glowing eyes, ink-stained fingers, floating sigils and a satchel of scrolls follow the wizard cues closely, though he reads more “very old” than undead. Generated in a taller 9:16 frame.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An elderly, slender male undead humanoid with gaunt, withered features, hollow cheeks, and an unnatural pallor, portrayed as a wizard, with ink-stained fingers, a satchel of scrolls, and faint arcane sigils glowing in the air nearby. A fantasy tabletop RPG character.
+
+APPEARANCE
+hair: white, eyes: glowing, skin: grey, expression: haunted.
+
+GEAR
+wearing ceremonial vestments, carrying spellbook, accessories: circlet, amulet.
+
+SCENE
+Framing: close-up portrait, head and shoulders. Pose: casting a spell. Setting: dungeon. Lighting: magical glow.
+
+STYLE
+Dark fantasy painting.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Generic+Fantasy&amp;ancestry=Undead&amp;class=Wizard&amp;gender=Male&amp;age=Elderly&amp;build=Slender&amp;hair=White&amp;eyes=Glowing&amp;skin=Grey&amp;expression=Haunted&amp;weapon=Spellbook&amp;armour=Ceremonial+vestments&amp;accessories=Circlet%2CAmulet&amp;framing=Portrait&amp;setting=Dungeon&amp;lighting=Magical+glow&amp;pose=Casting+a+spell&amp;style=Dark+fantasy+painting&amp;target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Generic Fantasy</dd>
+        <dt>Ancestry</dt><dd>Undead</dd>
+        <dt>Class</dt><dd>Wizard</dd>
+        <dt>Gender</dt><dd>Male</dd>
+        <dt>Age</dt><dd>Elderly</dd>
+        <dt>Build</dt><dd>Slender</dd>
+        <dt>Hair</dt><dd>White</dd>
+        <dt>Eyes</dt><dd>Glowing</dd>
+        <dt>Skin</dt><dd>Grey</dd>
+        <dt>Expression</dt><dd>Haunted</dd>
+        <dt>Weapon</dt><dd>Spellbook</dd>
+        <dt>Armour</dt><dd>Ceremonial vestments</dd>
+        <dt>Accessories</dt><dd>Circlet, Amulet</dd>
+        <dt>Framing</dt><dd>Portrait</dd>
+        <dt>Setting</dt><dd>Dungeon</dd>
+        <dt>Lighting</dt><dd>Magical glow</dd>
+        <dt>Pose</dt><dd>Casting a spell</dd>
+        <dt>Art style</dt><dd>Dark fantasy painting</dd>
+        <dt>Image model</dt><dd>Most models (GPT Image, Seedream, etc.)</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/lizardfolk-ranger/">&larr; Lizardfolk Ranger</a>
+    <a href="/gallery/orc-barbarian/">Orc Barbarian &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as Seedream 4.5 produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

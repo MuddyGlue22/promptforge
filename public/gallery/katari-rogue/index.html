@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Katari Rogue – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Katari Rogue AI portrait made with GPT Image: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/katari-rogue/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Katari Rogue – AI character portrait and prompt">
+<meta property="og:description" content="Katari Rogue AI portrait made with GPT Image: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/katari-rogue/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/02-katari-rogue-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Katari Rogue</h1>
+    <p>Built with the Tavern Portraits prompt builder (Daggerheart ruleset), then generated with GPT Image.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/02-katari-rogue-full.webp" width="1024" height="1536" alt="AI-generated concept art of a hooded grey tabby cat-folk rogue holding daggers, crouched on a wall above moonlit city ruins">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">GPT Image</span>
+        <span class="chip">Digital concept art</span>
+        <span class="chip">Waist up</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">Moonlight, a deep hood and half-shadow nail the rogue mood, and the grey tabby markings show clearly on the face. The expression reads more watchful than mischievous.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+A young, slender female feline humanoid with fur, whiskers, and retractable claws, portrayed as a rogue, in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look. A fantasy tabletop RPG character.
+
+APPEARANCE
+hair: black, eyes: green, fur: grey tabby, expression: mischievous.
+
+GEAR
+wearing leather, carrying dagger pair, accessories: hood, satchel.
+
+SCENE
+Framing: medium shot, framed from the waist up. Pose: crouched and alert. Setting: ruined city. Lighting: moonlight.
+
+STYLE
+Digital concept art.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Daggerheart&amp;ancestry=Katari&amp;class=Rogue&amp;gender=Female&amp;age=Young&amp;build=Slender&amp;hair=Black&amp;eyes=Green&amp;skin=Other&amp;skin-other=grey+tabby&amp;expression=Mischievous&amp;weapon=Dagger+pair&amp;armour=Leather&amp;accessories=Hood%2CSatchel&amp;framing=Waist+up&amp;setting=Ruined+city&amp;lighting=Moonlight&amp;pose=Crouched+and+alert&amp;style=Digital+concept+art&amp;target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Daggerheart</dd>
+        <dt>Ancestry</dt><dd>Katari</dd>
+        <dt>Class</dt><dd>Rogue</dd>
+        <dt>Gender</dt><dd>Female</dd>
+        <dt>Age</dt><dd>Young</dd>
+        <dt>Build</dt><dd>Slender</dd>
+        <dt>Hair</dt><dd>Black</dd>
+        <dt>Eyes</dt><dd>Green</dd>
+        <dt>Fur</dt><dd>grey tabby</dd>
+        <dt>Expression</dt><dd>Mischievous</dd>
+        <dt>Weapon</dt><dd>Dagger pair</dd>
+        <dt>Armour</dt><dd>Leather</dd>
+        <dt>Accessories</dt><dd>Hood, Satchel</dd>
+        <dt>Framing</dt><dd>Waist up</dd>
+        <dt>Setting</dt><dd>Ruined city</dd>
+        <dt>Lighting</dt><dd>Moonlight</dd>
+        <dt>Pose</dt><dd>Crouched and alert</dd>
+        <dt>Art style</dt><dd>Digital concept art</dd>
+        <dt>Image model</dt><dd>Most models (GPT Image, Seedream, etc.)</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/clank-guardian/">&larr; Clank Guardian</a>
+    <a href="/gallery/faerie-sorcerer/">Faerie Sorcerer &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as GPT Image produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Character Gallery – Tavern Portraits</title>
+<meta name="description" content="AI-generated fantasy RPG character portraits made with the Tavern Portraits prompt builder, with the exact prompt and image model behind each one.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Character Gallery – Tavern Portraits">
+<meta property="og:description" content="Fantasy RPG character portraits with the exact prompt and AI model behind each one.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/04-tiefling-warlock-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Tavern Portraits</p>
+    <h1>Character Gallery</h1>
+    <p>{{COUNT_WORD}} characters built with the <a class="inline-link" href="/">prompt builder</a> and rendered by different AI image models. Open any portrait to see the exact prompt behind it, or load the character into the builder and make it your own.</p>
+    <p class="ai-note">All images are AI-generated and shown exactly as the model produced them, with no retouching or cropping, quirks included.</p>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter by image model" id="filters" hidden>
+    {{FILTERS}}
+  </div>
+
+  <div class="grid" id="grid">
+{{CARDS}}
+  </div>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+// Filters are progressive enhancement: without JavaScript every card is simply shown.
+const filters = document.getElementById("filters");
+const cards = [...document.querySelectorAll(".card")];
+filters.hidden = false;
+filters.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    filters.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === btn));
+    const family = btn.dataset.family;
+    cards.forEach(card => { card.hidden = family !== "All" && card.dataset.family !== family; });
+  });
+});
+</script>
+</body>
+</html>

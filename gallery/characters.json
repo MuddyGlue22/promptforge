@@ -1,0 +1,382 @@
+[
+  {
+    "slug": "01-clank-guardian",
+    "title": "Clank Guardian",
+    "settings": {
+      "ruleset": "Daggerheart",
+      "ancestry": "Clank",
+      "class": "Guardian",
+      "gender": "Male",
+      "age": "Adult",
+      "build": "Stocky",
+      "eyes": "Glowing",
+      "skin": "Other",
+      "skin-other": "weathered bronze with green verdigris",
+      "expression": "Determined",
+      "weapon": "Warhammer",
+      "armour": "Plate",
+      "accessories": [
+        "Tabard",
+        "Pauldron"
+      ],
+      "framing": "Full body",
+      "setting": "Castle courtyard",
+      "lighting": "Overcast daylight",
+      "pose": "Standing heroically",
+      "style": "Painterly fantasy illustration",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "Seedream 5.5",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn adult, stocky male sentient, mechanical being of metal and gears, with visible rivets, hinges, and a glowing core, portrayed as a guardian, braced behind a heavy shield, broad-shouldered and firmly planted, in battle-scarred armour. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: glowing, metal plating: weathered bronze with green verdigris, expression: determined.\n\nGEAR\nwearing plate, carrying warhammer, accessories: tabard, pauldron.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: castle courtyard. Lighting: overcast daylight.\n\nSTYLE\nPainterly fantasy illustration.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "The weathered bronze and green verdigris from the free-text field came through beautifully, along with the glowing core, tabard and heavy shield. Seedream also added some storytelling of its own: look for the gallows in the courtyard.",
+    "alt": "AI-generated painting of a bronze clockwork guardian with green verdigris, a glowing chest core, red tabard, warhammer and round shield in a rainy castle courtyard"
+  },
+  {
+    "slug": "02-katari-rogue",
+    "title": "Katari Rogue",
+    "settings": {
+      "ruleset": "Daggerheart",
+      "ancestry": "Katari",
+      "class": "Rogue",
+      "gender": "Female",
+      "age": "Young",
+      "build": "Slender",
+      "hair": "Black",
+      "eyes": "Green",
+      "skin": "Other",
+      "skin-other": "grey tabby",
+      "expression": "Mischievous",
+      "weapon": "Dagger pair",
+      "armour": "Leather",
+      "accessories": [
+        "Hood",
+        "Satchel"
+      ],
+      "framing": "Waist up",
+      "setting": "Ruined city",
+      "lighting": "Moonlight",
+      "pose": "Crouched and alert",
+      "style": "Digital concept art",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "GPT Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nA young, slender female feline humanoid with fur, whiskers, and retractable claws, portrayed as a rogue, in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: black, eyes: green, fur: grey tabby, expression: mischievous.\n\nGEAR\nwearing leather, carrying dagger pair, accessories: hood, satchel.\n\nSCENE\nFraming: medium shot, framed from the waist up. Pose: crouched and alert. Setting: ruined city. Lighting: moonlight.\n\nSTYLE\nDigital concept art.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "Moonlight, a deep hood and half-shadow nail the rogue mood, and the grey tabby markings show clearly on the face. The expression reads more watchful than mischievous.",
+    "alt": "AI-generated concept art of a hooded grey tabby cat-folk rogue holding daggers, crouched on a wall above moonlit city ruins"
+  },
+  {
+    "slug": "03-faerie-sorcerer",
+    "title": "Faerie Sorcerer",
+    "settings": {
+      "ruleset": "Daggerheart",
+      "ancestry": "Faerie",
+      "class": "Sorcerer",
+      "gender": "Non-binary",
+      "age": "Ageless",
+      "build": "Slender",
+      "hair": "Silver",
+      "eyes": "Violet",
+      "skin": "Pale",
+      "expression": "Serene",
+      "weapon": "None visible",
+      "armour": "Cloth robes",
+      "accessories": [
+        "Circlet"
+      ],
+      "framing": "Three-quarter",
+      "setting": "Forest",
+      "lighting": "Magical glow",
+      "pose": "Casting a spell",
+      "style": "Watercolour",
+      "target-model": "FLUX"
+    },
+    "model": "FLUX",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn ageless, slender non-binary small winged fey with translucent wings and luminous features, portrayed as a sorcerer, with raw magic crackling around their hands and subtle signs of a magical bloodline in their features. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: silver, eyes: violet, skin: pale, expression: serene.\n\nGEAR\nwearing cloth robes, empty hands, accessories: circlet.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: casting a spell. Setting: forest. Lighting: magical glow.\n\nSTYLE\nWatercolour.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. Clean, unmarked artwork: the corners and edges show only the scene itself.",
+    "note": "The watercolour wash and crackling magic work well, but FLUX painted feathered, angel-like wings and a glowing halo rather than translucent fey wings. FLUX also signed the bottom-right corner, a known habit of the model; the image is shown exactly as generated.",
+    "alt": "AI-generated watercolour of a pale, silver-haired winged fey with violet eyes casting crackling golden magic in a forest"
+  },
+  {
+    "slug": "04-tiefling-warlock",
+    "title": "Tiefling Warlock",
+    "settings": {
+      "ruleset": "D&D 5e",
+      "ancestry": "Tiefling",
+      "class": "Warlock",
+      "gender": "Female",
+      "age": "Adult",
+      "build": "Athletic",
+      "hair": "Black",
+      "eyes": "Gold",
+      "skin": "Other",
+      "skin-other": "deep crimson",
+      "expression": "Confident",
+      "weapon": "Spellbook",
+      "armour": "Light cloak",
+      "accessories": [
+        "Amulet"
+      ],
+      "framing": "Portrait",
+      "setting": "Tavern",
+      "lighting": "Warm firelight",
+      "pose": "Looking over shoulder",
+      "style": "Dark fantasy painting",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "GPT Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn adult, athletic female tiefling with curling horns, a long pointed tail, and solid-coloured eyes, portrayed as a warlock, with eldritch markings on the skin, an eerie otherworldly glow, and a token of their patron. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: black, eyes: gold, skin: deep crimson, expression: confident.\n\nGEAR\nwearing light cloak, carrying spellbook, accessories: amulet.\n\nSCENE\nFraming: close-up portrait, head and shoulders. Pose: looking over shoulder. Setting: tavern. Lighting: warm firelight.\n\nSTYLE\nDark fantasy painting.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "The close-up framing, deep crimson skin, gold eyes and glowing eldritch markings all landed, and the warm tavern firelight sells the over-the-shoulder glance.",
+    "alt": "AI-generated dark fantasy portrait of a crimson-skinned tiefling with curling horns, gold eyes and glowing markings, glancing over her shoulder in a firelit tavern"
+  },
+  {
+    "slug": "05-dwarf-cleric",
+    "title": "Dwarf Cleric",
+    "settings": {
+      "ruleset": "D&D 5e",
+      "ancestry": "Dwarf",
+      "class": "Cleric",
+      "gender": "Male",
+      "age": "Middle-aged",
+      "build": "Stocky",
+      "hair": "Red",
+      "eyes": "Brown",
+      "skin": "Fair",
+      "expression": "Grim",
+      "weapon": "Warhammer",
+      "armour": "Chain shirt",
+      "accessories": [
+        "Amulet",
+        "Cloak"
+      ],
+      "framing": "Full body",
+      "setting": "Mountain pass",
+      "lighting": "Dramatic side light",
+      "pose": "Standing heroically",
+      "style": "Classic oil painting",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "Seedream 5.5",
+    "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a cleric, with a prominently displayed holy symbol, vestments worn over armour, and a soft divine glow. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: red, eyes: brown, skin: fair, expression: grim.\n\nGEAR\nwearing chain shirt, carrying warhammer, accessories: amulet, cloak.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: mountain pass. Lighting: dramatic side light.\n\nSTYLE\nClassic oil painting.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "A convincing classic oil painting: braided red beard, a glowing holy symbol and a soft divine light in the open hand. The grim expression and mountain pass match the prompt closely.",
+    "alt": "AI-generated oil painting of a red-bearded dwarf cleric in chain mail with a glowing holy symbol and a warhammer on a mountain pass"
+  },
+  {
+    "slug": "06-dragonborn-paladin",
+    "title": "Dragonborn Paladin",
+    "settings": {
+      "ruleset": "D&D 5e",
+      "ancestry": "Dragonborn",
+      "class": "Paladin",
+      "gender": "Male",
+      "age": "Adult",
+      "build": "Muscular",
+      "eyes": "Amber",
+      "skin": "Other",
+      "skin-other": "burnished bronze",
+      "expression": "Determined",
+      "weapon": "Longsword",
+      "armour": "Plate",
+      "accessories": [
+        "Cloak"
+      ],
+      "framing": "Three-quarter",
+      "setting": "Desert ruins",
+      "lighting": "Rim light",
+      "pose": "Leaning on weapon",
+      "style": "Digital concept art",
+      "target-model": "FLUX"
+    },
+    "model": "FLUX",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn adult, muscular male dragonborn, a tall draconic humanoid with a scaled, dragon-like head, a snout, and a powerful build, without a tail, portrayed as a paladin, in polished armour bearing a sacred emblem, with a tabard and an air of righteous resolve. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: amber, scales: burnished bronze, expression: determined.\n\nGEAR\nwearing plate, carrying longsword, accessories: cloak.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: leaning on weapon. Setting: desert ruins. Lighting: rim light.\n\nSTYLE\nDigital concept art.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. Clean, unmarked artwork: the corners and edges show only the scene itself.",
+    "note": "Polished plate, rim light and the desert ruins are spot on, but FLUX ignored “without a tail” and gave him one anyway. There is also a small red mark in the bottom-right corner, which FLUX tends to add; shown as generated.",
+    "alt": "AI-generated concept art of a horned bronze dragonborn paladin in polished plate armour holding a longsword among desert ruins"
+  },
+  {
+    "slug": "07-halfling-bard",
+    "title": "Halfling Bard",
+    "settings": {
+      "ruleset": "D&D 5e",
+      "ancestry": "Halfling",
+      "class": "Bard",
+      "gender": "Female",
+      "age": "Young",
+      "build": "Slender",
+      "hair": "Brown",
+      "eyes": "Blue",
+      "skin": "Tan",
+      "expression": "Cheerful",
+      "weapon": "Rapier",
+      "armour": "Leather",
+      "accessories": [
+        "Feathered cap",
+        "Scarf"
+      ],
+      "framing": "Waist up",
+      "setting": "Tavern",
+      "lighting": "Warm firelight",
+      "pose": "Relaxed stance",
+      "style": "Anime-inspired",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "MOSS Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nA young, slender female halfling, small and nimble, about half the height of a human, with bare, sturdy feet, portrayed as a bard, with a musical instrument close at hand, flamboyant layered clothing, and a confident, expressive bearing. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: brown, eyes: blue, skin: tan, expression: cheerful.\n\nGEAR\nwearing leather, carrying rapier, accessories: feathered cap, scarf.\n\nSCENE\nFraming: medium shot, framed from the waist up. Pose: relaxed stance. Setting: tavern. Lighting: warm firelight.\n\nSTYLE\nAnime-inspired.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "The anime style suits a cheerful bard: feathered cap, lute at the hip and bare halfling feet. MOSS gave her pointed, elf-like ears, which halflings don’t usually have.",
+    "alt": "AI-generated anime-style illustration of a smiling halfling bard with a feathered cap, cape, lute and bare feet in a tavern"
+  },
+  {
+    "slug": "08-leshy-druid",
+    "title": "Leshy Druid",
+    "settings": {
+      "ruleset": "Pathfinder 2e",
+      "ancestry": "Leshy",
+      "class": "Druid",
+      "gender": "Androgynous",
+      "age": "Ageless",
+      "build": "Slender",
+      "eyes": "Green",
+      "skin": "Other",
+      "skin-other": "mossy oak with small white blossoms",
+      "expression": "Serene",
+      "weapon": "Staff",
+      "armour": "None",
+      "accessories": [
+        "Satchel"
+      ],
+      "framing": "Full body",
+      "setting": "Swamp",
+      "lighting": "Soft natural light",
+      "pose": "Relaxed stance",
+      "style": "Watercolour",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "GPT Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn ageless, slender androgynous leshy, a small plant creature with a body of bark, leaves, and vines, and a gourd- or flower-like head, portrayed as a druid, dressed in natural materials like leaves, bark, and bone, with moss or vines woven into their gear. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: green, bark: mossy oak with small white blossoms, expression: serene.\n\nGEAR\nwearing none, carrying staff, accessories: satchel.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: relaxed stance. Setting: swamp. Lighting: soft natural light.\n\nSTYLE\nWatercolour.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "One of the most faithful results in the set: a flower-headed plant creature of moss, bark and blossoms, with staff and satchel, in soft watercolour over a misty swamp.",
+    "alt": "AI-generated watercolour of a leshy druid with a flower-shaped head and a body of moss, bark and leaves, holding a staff in a swamp"
+  },
+  {
+    "slug": "09-tengu-alchemist",
+    "title": "Tengu Alchemist",
+    "settings": {
+      "ruleset": "Pathfinder 2e",
+      "ancestry": "Tengu",
+      "class": "Alchemist",
+      "gender": "Male",
+      "age": "Adult",
+      "build": "Lanky",
+      "eyes": "Amber",
+      "skin": "Other",
+      "skin-other": "glossy black with a blue sheen",
+      "expression": "Mischievous",
+      "weapon": "Crossbow",
+      "armour": "Leather",
+      "accessories": [
+        "Spectacles",
+        "Satchel"
+      ],
+      "framing": "Three-quarter",
+      "setting": "Ruined city",
+      "lighting": "Magical glow",
+      "pose": "Mid-action",
+      "style": "Ink and wash",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "GPT Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn adult, lanky male tengu, a bird-like humanoid with a sharp beak, feathered head, and taloned hands, portrayed as an alchemist, with bandoliers of glass vials, goggles, stained gloves, and a bubbling flask in hand. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: amber, feathers: glossy black with a blue sheen, expression: mischievous.\n\nGEAR\nwearing leather, carrying crossbow, accessories: spectacles, satchel.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: mid-action. Setting: ruined city. Lighting: magical glow.\n\nSTYLE\nInk and wash.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "Goggles, vial bandoliers and a bubbling green flask make the alchemist unmistakable, with a crossbow slung behind. GPT Image added crow-like wings the prompt didn’t ask for, and its ink-and-wash picked up plenty of colour.",
+    "alt": "AI-generated ink-and-wash illustration of a crow-like tengu alchemist with goggles, vial bandoliers, a crossbow and a glowing green flask"
+  },
+  {
+    "slug": "10-lizardfolk-ranger",
+    "title": "Lizardfolk Ranger",
+    "settings": {
+      "ruleset": "Pathfinder 2e",
+      "ancestry": "Lizardfolk",
+      "class": "Ranger",
+      "gender": "Female",
+      "age": "Adult",
+      "build": "Athletic",
+      "eyes": "Gold",
+      "skin": "Green",
+      "expression": "Wary",
+      "weapon": "Longbow",
+      "armour": "Studded leather",
+      "accessories": [
+        "Hood"
+      ],
+      "framing": "Full body",
+      "setting": "Swamp",
+      "lighting": "Overcast daylight",
+      "pose": "Crouched and alert",
+      "style": "Painterly fantasy illustration",
+      "target-model": "FLUX"
+    },
+    "model": "MOSS Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn adult, athletic female lizardfolk, a reptilian humanoid with a long snout, sharp teeth, and a thick tail, portrayed as a ranger, in weathered, earth-toned travel layers, with a quiver, a hunting knife, and road-worn boots. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: gold, scales: green, expression: wary.\n\nGEAR\nwearing studded leather, carrying longbow, accessories: hood.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: crouched and alert. Setting: swamp. Lighting: overcast daylight.\n\nSTYLE\nPainterly fantasy illustration.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. Clean, unmarked artwork: the corners and edges show only the scene itself.",
+    "note": "Hood, longbow, quiver and thick tail are all there, crouched and alert in a misty swamp. This prompt uses the builder’s FLUX wording but was generated with MOSS Image.",
+    "alt": "AI-generated painting of a hooded green lizardfolk ranger with a longbow and quiver, crouched in a misty swamp"
+  },
+  {
+    "slug": "11-undead-wizard",
+    "title": "Undead Wizard",
+    "settings": {
+      "ruleset": "Generic Fantasy",
+      "ancestry": "Undead",
+      "class": "Wizard",
+      "gender": "Male",
+      "age": "Elderly",
+      "build": "Slender",
+      "hair": "White",
+      "eyes": "Glowing",
+      "skin": "Grey",
+      "expression": "Haunted",
+      "weapon": "Spellbook",
+      "armour": "Ceremonial vestments",
+      "accessories": [
+        "Circlet",
+        "Amulet"
+      ],
+      "framing": "Portrait",
+      "setting": "Dungeon",
+      "lighting": "Magical glow",
+      "pose": "Casting a spell",
+      "style": "Dark fantasy painting",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "Seedream 4.5",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn elderly, slender male undead humanoid with gaunt, withered features, hollow cheeks, and an unnatural pallor, portrayed as a wizard, with ink-stained fingers, a satchel of scrolls, and faint arcane sigils glowing in the air nearby. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: white, eyes: glowing, skin: grey, expression: haunted.\n\nGEAR\nwearing ceremonial vestments, carrying spellbook, accessories: circlet, amulet.\n\nSCENE\nFraming: close-up portrait, head and shoulders. Pose: casting a spell. Setting: dungeon. Lighting: magical glow.\n\nSTYLE\nDark fantasy painting.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "Glowing eyes, ink-stained fingers, floating sigils and a satchel of scrolls follow the wizard cues closely, though he reads more “very old” than undead. Generated in a taller 9:16 frame.",
+    "alt": "AI-generated dark fantasy portrait of a gaunt elderly wizard with glowing eyes, a gold circlet and an open spellbook surrounded by floating sigils"
+  },
+  {
+    "slug": "12-orc-barbarian",
+    "title": "Orc Barbarian",
+    "settings": {
+      "ruleset": "Generic Fantasy",
+      "ancestry": "Orc",
+      "class": "Barbarian",
+      "gender": "Female",
+      "age": "Adult",
+      "build": "Muscular",
+      "hair": "Black",
+      "eyes": "Brown",
+      "skin": "Green",
+      "expression": "Fierce",
+      "weapon": "Greataxe",
+      "armour": "Leather",
+      "accessories": [
+        "Gauntlets",
+        "Cloak"
+      ],
+      "framing": "Full body",
+      "setting": "Frozen tundra",
+      "lighting": "Dramatic side light",
+      "pose": "Mid-action",
+      "style": "Digital concept art",
+      "target-model": "Most models (GPT Image, Seedream, etc.)"
+    },
+    "model": "MOSS Image",
+    "prompt": "Generate an image.\n\nSUBJECT\nAn adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, with furs, bare muscular arms, war paint, and a wild, untamed look. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: black, eyes: brown, skin: green, expression: fierce.\n\nGEAR\nwearing leather, carrying greataxe, accessories: gauntlets, cloak.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: mid-action. Setting: frozen tundra. Lighting: dramatic side light.\n\nSTYLE\nDigital concept art.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+    "note": "Furs, a huge greataxe and a frozen tundra backdrop match the prompt well. The pose is more of a determined stride than mid-action, and the war paint didn’t appear.",
+    "alt": "AI-generated concept art of a green-skinned orc barbarian in furs carrying a greataxe through a snowy tundra"
+  }
+]

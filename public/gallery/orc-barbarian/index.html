@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orc Barbarian – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Orc Barbarian AI portrait made with MOSS Image: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/orc-barbarian/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Orc Barbarian – AI character portrait and prompt">
+<meta property="og:description" content="Orc Barbarian AI portrait made with MOSS Image: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/orc-barbarian/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/12-orc-barbarian-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Orc Barbarian</h1>
+    <p>Built with the Tavern Portraits prompt builder (Generic Fantasy ruleset), then generated with MOSS Image.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/12-orc-barbarian-full.webp" width="1200" height="1800" alt="AI-generated concept art of a green-skinned orc barbarian in furs carrying a greataxe through a snowy tundra">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">MOSS Image</span>
+        <span class="chip">Digital concept art</span>
+        <span class="chip">Full body</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">Furs, a huge greataxe and a frozen tundra backdrop match the prompt well. The pose is more of a determined stride than mid-action, and the war paint didn’t appear.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, with furs, bare muscular arms, war paint, and a wild, untamed look. A fantasy tabletop RPG character.
+
+APPEARANCE
+hair: black, eyes: brown, skin: green, expression: fierce.
+
+GEAR
+wearing leather, carrying greataxe, accessories: gauntlets, cloak.
+
+SCENE
+Framing: full-body shot, the entire character visible from head to toe. Pose: mid-action. Setting: frozen tundra. Lighting: dramatic side light.
+
+STYLE
+Digital concept art.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Generic+Fantasy&amp;ancestry=Orc&amp;class=Barbarian&amp;gender=Female&amp;age=Adult&amp;build=Muscular&amp;hair=Black&amp;eyes=Brown&amp;skin=Green&amp;expression=Fierce&amp;weapon=Greataxe&amp;armour=Leather&amp;accessories=Gauntlets%2CCloak&amp;framing=Full+body&amp;setting=Frozen+tundra&amp;lighting=Dramatic+side+light&amp;pose=Mid-action&amp;style=Digital+concept+art&amp;target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Generic Fantasy</dd>
+        <dt>Ancestry</dt><dd>Orc</dd>
+        <dt>Class</dt><dd>Barbarian</dd>
+        <dt>Gender</dt><dd>Female</dd>
+        <dt>Age</dt><dd>Adult</dd>
+        <dt>Build</dt><dd>Muscular</dd>
+        <dt>Hair</dt><dd>Black</dd>
+        <dt>Eyes</dt><dd>Brown</dd>
+        <dt>Skin</dt><dd>Green</dd>
+        <dt>Expression</dt><dd>Fierce</dd>
+        <dt>Weapon</dt><dd>Greataxe</dd>
+        <dt>Armour</dt><dd>Leather</dd>
+        <dt>Accessories</dt><dd>Gauntlets, Cloak</dd>
+        <dt>Framing</dt><dd>Full body</dd>
+        <dt>Setting</dt><dd>Frozen tundra</dd>
+        <dt>Lighting</dt><dd>Dramatic side light</dd>
+        <dt>Pose</dt><dd>Mid-action</dd>
+        <dt>Art style</dt><dd>Digital concept art</dd>
+        <dt>Image model</dt><dd>Most models (GPT Image, Seedream, etc.)</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/undead-wizard/">&larr; Undead Wizard</a>
+    <a href="/gallery/clank-guardian/">Clank Guardian &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as MOSS Image produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

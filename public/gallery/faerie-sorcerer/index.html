@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Faerie Sorcerer – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Faerie Sorcerer AI portrait made with FLUX: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/faerie-sorcerer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Faerie Sorcerer – AI character portrait and prompt">
+<meta property="og:description" content="Faerie Sorcerer AI portrait made with FLUX: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/faerie-sorcerer/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/03-faerie-sorcerer-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Faerie Sorcerer</h1>
+    <p>Built with the Tavern Portraits prompt builder (Daggerheart ruleset), then generated with FLUX.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/03-faerie-sorcerer-full.webp" width="832" height="1248" alt="AI-generated watercolour of a pale, silver-haired winged fey with violet eyes casting crackling golden magic in a forest">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">FLUX</span>
+        <span class="chip">Watercolour</span>
+        <span class="chip">Three-quarter</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">The watercolour wash and crackling magic work well, but FLUX painted feathered, angel-like wings and a glowing halo rather than translucent fey wings. FLUX also signed the bottom-right corner, a known habit of the model; the image is shown exactly as generated.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An ageless, slender non-binary small winged fey with translucent wings and luminous features, portrayed as a sorcerer, with raw magic crackling around their hands and subtle signs of a magical bloodline in their features. A fantasy tabletop RPG character.
+
+APPEARANCE
+hair: silver, eyes: violet, skin: pale, expression: serene.
+
+GEAR
+wearing cloth robes, empty hands, accessories: circlet.
+
+SCENE
+Framing: three-quarter shot, framed from the knees up. Pose: casting a spell. Setting: forest. Lighting: magical glow.
+
+STYLE
+Watercolour.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. Clean, unmarked artwork: the corners and edges show only the scene itself.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Daggerheart&amp;ancestry=Faerie&amp;class=Sorcerer&amp;gender=Non-binary&amp;age=Ageless&amp;build=Slender&amp;hair=Silver&amp;eyes=Violet&amp;skin=Pale&amp;expression=Serene&amp;weapon=None+visible&amp;armour=Cloth+robes&amp;accessories=Circlet&amp;framing=Three-quarter&amp;setting=Forest&amp;lighting=Magical+glow&amp;pose=Casting+a+spell&amp;style=Watercolour&amp;target-model=FLUX">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Daggerheart</dd>
+        <dt>Ancestry</dt><dd>Faerie</dd>
+        <dt>Class</dt><dd>Sorcerer</dd>
+        <dt>Gender</dt><dd>Non-binary</dd>
+        <dt>Age</dt><dd>Ageless</dd>
+        <dt>Build</dt><dd>Slender</dd>
+        <dt>Hair</dt><dd>Silver</dd>
+        <dt>Eyes</dt><dd>Violet</dd>
+        <dt>Skin</dt><dd>Pale</dd>
+        <dt>Expression</dt><dd>Serene</dd>
+        <dt>Weapon</dt><dd>None visible</dd>
+        <dt>Armour</dt><dd>Cloth robes</dd>
+        <dt>Accessories</dt><dd>Circlet</dd>
+        <dt>Framing</dt><dd>Three-quarter</dd>
+        <dt>Setting</dt><dd>Forest</dd>
+        <dt>Lighting</dt><dd>Magical glow</dd>
+        <dt>Pose</dt><dd>Casting a spell</dd>
+        <dt>Art style</dt><dd>Watercolour</dd>
+        <dt>Image model</dt><dd>FLUX</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/katari-rogue/">&larr; Katari Rogue</a>
+    <a href="/gallery/tiefling-warlock/">Tiefling Warlock &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as FLUX produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

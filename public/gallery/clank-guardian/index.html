@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clank Guardian – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="Clank Guardian AI portrait made with Seedream 5.5: the exact prompt, builder settings and notes on how it turned out.">
+<link rel="canonical" href="https://tavernportraits.com/gallery/clank-guardian/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="Clank Guardian – AI character portrait and prompt">
+<meta property="og:description" content="Clank Guardian AI portrait made with Seedream 5.5: the exact prompt, builder settings and notes on how it turned out.">
+<meta property="og:url" content="https://tavernportraits.com/gallery/clank-guardian/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/01-clank-guardian-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>Clank Guardian</h1>
+    <p>Built with the Tavern Portraits prompt builder (Daggerheart ruleset), then generated with Seedream 5.5.</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/01-clank-guardian-full.webp" width="836" height="1254" alt="AI-generated painting of a bronze clockwork guardian with green verdigris, a glowing chest core, red tabard, warhammer and round shield in a rainy castle courtyard">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">Seedream 5.5</span>
+        <span class="chip">Painterly fantasy illustration</span>
+        <span class="chip">Full body</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">The weathered bronze and green verdigris from the free-text field came through beautifully, along with the glowing core, tabard and heavy shield. Seedream also added some storytelling of its own: look for the gallows in the courtyard.</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">Generate an image.
+
+SUBJECT
+An adult, stocky male sentient, mechanical being of metal and gears, with visible rivets, hinges, and a glowing core, portrayed as a guardian, braced behind a heavy shield, broad-shouldered and firmly planted, in battle-scarred armour. A fantasy tabletop RPG character.
+
+APPEARANCE
+eyes: glowing, metal plating: weathered bronze with green verdigris, expression: determined.
+
+GEAR
+wearing plate, carrying warhammer, accessories: tabard, pauldron.
+
+SCENE
+Framing: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: castle courtyard. Lighting: overcast daylight.
+
+STYLE
+Painterly fantasy illustration.
+
+REQUIREMENTS
+A single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.</pre>
+      <div class="actions">
+        <a class="button" href="/?ruleset=Daggerheart&amp;ancestry=Clank&amp;class=Guardian&amp;gender=Male&amp;age=Adult&amp;build=Stocky&amp;eyes=Glowing&amp;skin=Other&amp;skin-other=weathered+bronze+with+green+verdigris&amp;expression=Determined&amp;weapon=Warhammer&amp;armour=Plate&amp;accessories=Tabard%2CPauldron&amp;framing=Full+body&amp;setting=Castle+courtyard&amp;lighting=Overcast+daylight&amp;pose=Standing+heroically&amp;style=Painterly+fantasy+illustration&amp;target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+        <dt>Ruleset</dt><dd>Daggerheart</dd>
+        <dt>Ancestry</dt><dd>Clank</dd>
+        <dt>Class</dt><dd>Guardian</dd>
+        <dt>Gender</dt><dd>Male</dd>
+        <dt>Age</dt><dd>Adult</dd>
+        <dt>Build</dt><dd>Stocky</dd>
+        <dt>Eyes</dt><dd>Glowing</dd>
+        <dt>Metal plating</dt><dd>weathered bronze with green verdigris</dd>
+        <dt>Expression</dt><dd>Determined</dd>
+        <dt>Weapon</dt><dd>Warhammer</dd>
+        <dt>Armour</dt><dd>Plate</dd>
+        <dt>Accessories</dt><dd>Tabard, Pauldron</dd>
+        <dt>Framing</dt><dd>Full body</dd>
+        <dt>Setting</dt><dd>Castle courtyard</dd>
+        <dt>Lighting</dt><dd>Overcast daylight</dd>
+        <dt>Pose</dt><dd>Standing heroically</dd>
+        <dt>Art style</dt><dd>Painterly fantasy illustration</dd>
+        <dt>Image model</dt><dd>Most models (GPT Image, Seedream, etc.)</dd>
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/orc-barbarian/">&larr; Orc Barbarian</a>
+    <a href="/gallery/katari-rogue/">Katari Rogue &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as Seedream 5.5 produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>

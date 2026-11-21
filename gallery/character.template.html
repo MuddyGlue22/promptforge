@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}} – AI Character Portrait &amp; Prompt | Tavern Portraits</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="https://tavernportraits.com/gallery/{{PAGE}}/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tavern Portraits">
+<meta property="og:title" content="{{TITLE}} – AI character portrait and prompt">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="https://tavernportraits.com/gallery/{{PAGE}}/">
+<meta property="og:image" content="https://tavernportraits.com/gallery/img/{{SLUG}}-full.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="breadcrumb"><a href="/gallery/">&larr; Character Gallery</a></p>
+    <h1>{{TITLE}}</h1>
+    <p>{{SUBTITLE}}</p>
+  </header>
+
+  <main class="character">
+    <figure class="character-img">
+      <img src="/gallery/img/{{SLUG}}-full.webp" width="{{FULL_W}}" height="{{FULL_H}}" alt="{{ALT}}">
+    </figure>
+
+    <div class="panel character-info">
+      <div class="chips">
+        <span class="chip model">{{MODEL}}</span>
+        <span class="chip">{{STYLE}}</span>
+        <span class="chip">{{FRAMING}}</span>
+      </div>
+
+      <h2>How it turned out</h2>
+      <p class="note">{{NOTE}}</p>
+
+      <h2>The prompt</h2>
+      <pre class="prompt" id="prompt">{{PROMPT}}</pre>
+      <div class="actions">
+        <a class="button" href="{{TRY_URL}}">Try this character</a>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+
+      <h2>Builder settings</h2>
+      <dl class="settings">
+{{SETTINGS}}
+      </dl>
+    </div>
+  </main>
+
+  <nav class="pager" aria-label="More characters">
+    <a href="/gallery/{{PREV_PAGE}}/">&larr; {{PREV_TITLE}}</a>
+    <a href="/gallery/{{NEXT_PAGE}}/">{{NEXT_TITLE}} &rarr;</a>
+  </nav>
+
+  <p class="ai-note">This image is AI-generated and shown exactly as {{MODEL}} produced it, with no retouching or cropping.</p>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Tavern Portraits</span>
+    <a href="/">Prompt builder</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/privacy.html">Privacy policy</a>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy-prompt").addEventListener("click", () => {
+  const btn = document.getElementById("copy-prompt");
+  navigator.clipboard.writeText(document.getElementById("prompt").textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    clearTimeout(btn._reset);
+    btn._reset = setTimeout(() => {
+      btn.textContent = "Copy prompt";
+      btn.classList.remove("copied");
+    }, 1600);
+  });
+});
+</script>
+</body>
+</html>
