@@ -191,14 +191,21 @@
 
       <label>Hair
         <select id="hair"></select>
+        <input type="text" id="hair-other" class="other-input" placeholder="Describe the hair">
       </label>
 
       <label>Eyes
         <select id="eyes"></select>
+        <input type="text" id="eyes-other" class="other-input" placeholder="Describe the eyes">
       </label>
 
       <label>Skin
         <select id="skin"></select>
+        <input type="text" id="skin-other" class="other-input" placeholder="Describe the skin">
+      </label>
+
+      <label>Expression
+        <select id="expression"></select>
       </label>
 
       <label>Distinguishing marks
@@ -220,6 +227,10 @@
       </label>
 
       <div class="section-title">Scene</div>
+
+      <label>Framing
+        <select id="framing"></select>
+      </label>
 
       <label>Setting
         <select id="setting"></select>
@@ -323,6 +334,11 @@ const DATA = {
     "Soft natural light", "Dramatic side light", "Warm firelight", "Moonlight",
     "Overcast daylight", "Magical glow", "Rim light", "Studio lighting"
   ],
+  framings: ["Full body", "Three-quarter", "Waist up", "Portrait"],
+  expressions: [
+    "Determined", "Confident", "Grim", "Wary", "Cheerful", "Serene",
+    "Fierce", "Mischievous", "Weary", "Haunted"
+  ],
   poses: [
     "Standing heroically", "Mid-action", "Crouched and alert", "Arms crossed",
     "Leaning on weapon", "Casting a spell", "Looking over shoulder", "Relaxed stance"
@@ -335,23 +351,30 @@ const DATA = {
 
 // Full descriptions used in the generated prompt (not shown in the dropdown)
 const CLASS_DETAILS = {
-  "Bard": "a charismatic performer and storyteller who uses song, words, or wit to shape the world around them",
-  "Druid": "a nature-attuned spellcaster with a deep connection to the wild and its cycles",
-  "Guardian": "a steadfast protector whose primary role is to shield allies and hold the line",
-  "Ranger": "a wilderness tracker and hunter, at home on the road and skilled at reading the land",
-  "Rogue": "a nimble and cunning operative who relies on stealth, quick thinking, and precise strikes",
-  "Seraph": "a celestial champion who draws power from a higher, divine source",
-  "Sorcerer": "an innate spellcaster whose magic comes from within, shaped by heritage or bloodline",
-  "Warrior": "a battle-hardened fighter whose skill and discipline are built through years of combat",
-  "Wizard": "a scholarly arcane practitioner who gains power through study and mastery of magical theory",
-  "Barbarian": "a fierce warrior who draws strength from primal rage and endurance",
-  "Cleric": "a devoted servant of a divine power who channels faith into healing and protection",
-  "Fighter": "a versatile and skilled combatant who excels through training and tactical ability",
-  "Monk": "a disciplined martial artist who channels inner energy and focus into their strikes",
-  "Paladin": "a holy warrior bound by a sacred oath, who fights for a cause greater than themselves",
-  "Warlock": "a wielder of pact magic, bound by a bargain with an otherworldly patron",
-  "Alchemist": "an inventor and experimenter who creates elixirs, bombs, and other mixtures",
-  "Champion": "a dedicated holy warrior who stands for a cause and defends the innocent"
+  "Bard": "with a musical instrument close at hand, flamboyant layered clothing, and a confident, expressive bearing",
+  "Druid": "dressed in natural materials like leaves, bark, and bone, with moss or vines woven into their gear",
+  "Guardian": "braced behind a heavy shield, broad-shouldered and firmly planted, in battle-scarred armour",
+  "Ranger": "in weathered, earth-toned travel layers, with a quiver, a hunting knife, and road-worn boots",
+  "Rogue": "in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look",
+  "Seraph": "in gleaming armour marked with holy symbols, surrounded by a faint radiant light",
+  "Sorcerer": "with raw magic crackling around their hands and subtle signs of a magical bloodline in their features",
+  "Warrior": "in practical, battle-worn gear, with visible scars and a well-used weapon",
+  "Wizard": "with ink-stained fingers, a satchel of scrolls, and faint arcane sigils glowing in the air nearby",
+  "Barbarian": "with furs, bare muscular arms, war paint, and a wild, untamed look",
+  "Cleric": "with a prominently displayed holy symbol, vestments worn over armour, and a soft divine glow",
+  "Fighter": "in well-maintained armour, with the disciplined bearing of a trained soldier",
+  "Monk": "in simple, loose-fitting garments, with wrapped hands and a calm, centred posture",
+  "Paladin": "in polished armour bearing a sacred emblem, with a tabard and an air of righteous resolve",
+  "Warlock": "with eldritch markings on the skin, an eerie otherworldly glow, and a token of their patron",
+  "Alchemist": "with bandoliers of glass vials, goggles, stained gloves, and a bubbling flask in hand",
+  "Champion": "in shining armour bearing a deity's emblem, with a shield raised protectively"
+};
+
+const FRAMING_DETAILS = {
+  "Full body": "full-body shot, the entire character visible from head to toe",
+  "Three-quarter": "three-quarter shot, framed from the knees up",
+  "Waist up": "medium shot, framed from the waist up",
+  "Portrait": "close-up portrait, head and shoulders"
 };
 
 const ANCESTRY_DETAILS = {
@@ -365,7 +388,7 @@ const ANCESTRY_DETAILS = {
   "Giant": "a towering humanoid, many times the height of a person",
   "Goblin": "a small, quick-witted humanoid with large ears and sharp features",
   "Greataxe Orc": "a muscular orc-like humanoid, heavily built and tusked",
-  "Infernis": "a fiend-touched humanoid with horns, ember-colored eyes, and dark skin",
+  "Infernis": "a fiend-touched humanoid with horns and ember-colored eyes",
   "Simiah": "an ape-like humanoid with long arms, a thick brow, and expressive features",
   "Seraph": "a celestial humanoid with feathered wings and a radiant bearing",
   "Wyrmling": "a young dragon-kin humanoid with small horns, a scaled tail, and keen eyes"
@@ -410,6 +433,18 @@ function toggleOther(selectId, inputId) {
   $(inputId).classList.toggle("show", isOther);
 }
 
+const FREE_TEXT_TRAITS = ["hair", "eyes", "skin"];
+
+function toggleTraitOthers() {
+  FREE_TEXT_TRAITS.forEach(id => toggleOther(id, `${id}-other`));
+}
+
+// Returns the trait text for the prompt, or "" if "Other" was chosen but left blank.
+function traitText(id) {
+  if ($(id).value === "Other") return $(`${id}-other`).value.trim();
+  return $(id).value.toLowerCase();
+}
+
 function refreshAncestries() {
   const ruleset = $("ruleset").value;
   fillSelect($("ancestry"), DATA.ancestries[ruleset]);
@@ -418,18 +453,27 @@ function refreshAncestries() {
   toggleOther("class", "class-other");
 }
 
-function ancestryText() {
-  const choice = $("ancestry").value;
-  if (choice === "Other") return $("ancestry-other").value.trim() || "a unique ancestry";
-  return ANCESTRY_DETAILS[choice] || choice;
+function stripArticle(text) {
+  return text.replace(/^(a|an)\s+/i, "");
 }
 
+// Ancestry as a noun phrase with no leading article, e.g. "draconic humanoid with scales...".
+function ancestryText() {
+  const choice = $("ancestry").value;
+  if (choice === "Other") return stripArticle($("ancestry-other").value.trim()) || "humanoid of unusual ancestry";
+  return stripArticle(ANCESTRY_DETAILS[choice] || choice);
+}
+
+// Class with its article and visual cues, e.g. "a wizard, with ink-stained fingers...".
 function classDescription() {
   const choice = $("class").value;
   if (choice === "Other") {
-    return $("class-other").value.trim() || "a unique adventurer";
+    const custom = stripArticle($("class-other").value.trim());
+    return custom ? `${indefinite(custom)} ${custom}` : "a unique adventurer";
   }
-  return CLASS_DETAILS[choice] || choice.toLowerCase();
+  const name = choice.toLowerCase();
+  const cues = CLASS_DETAILS[choice];
+  return `${indefinite(name)} ${name}` + (cues ? `, ${cues}` : "");
 }
 
 // ---------- prompt building ----------
@@ -443,17 +487,22 @@ function buildPrompt() {
 
   const sections = [];
 
+  const age = $("age").value.toLowerCase();
+  const subject =
+    `${indefinite(age)} ${age}, ${$("build").value.toLowerCase()} ${$("gender").value.toLowerCase()} ` +
+    `${ancestry}, portrayed as ${classDesc}.`;
   sections.push(
     "SUBJECT\n" +
-    `${indefinite($("age").value)} ${$("age").value.toLowerCase()} ${$("gender").value.toLowerCase()} ` +
-    `${$("build").value.toLowerCase()} ${ancestry}, portrayed as ${classDesc}. ` +
-    `From the ${$("ruleset").value} tabletop RPG.`
+    subject.charAt(0).toUpperCase() + subject.slice(1) + " " +
+    `A character from the ${$("ruleset").value} tabletop RPG.`
   );
 
   const appearance = [];
-  if (!noHair) appearance.push(`hair: ${$("hair").value.toLowerCase()}`);
-  appearance.push(`eyes: ${$("eyes").value.toLowerCase()}`);
-  appearance.push(`skin: ${$("skin").value.toLowerCase()}`);
+  const hair = traitText("hair"), eyes = traitText("eyes"), skin = traitText("skin");
+  if (!noHair && hair) appearance.push(`hair: ${hair}`);
+  if (eyes) appearance.push(`eyes: ${eyes}`);
+  if (skin) appearance.push(`skin: ${skin}`);
+  appearance.push(`expression: ${$("expression").value.toLowerCase()}`);
   if ($("marks").value.trim()) appearance.push(`distinguishing marks: ${$("marks").value.trim()}`);
   sections.push(`APPEARANCE\n${appearance.join(", ")}.`);
   
@@ -466,6 +515,7 @@ function buildPrompt() {
 
   sections.push(
     "SCENE\n" +
+    `Framing: ${FRAMING_DETAILS[$("framing").value]}. ` +
     `Pose: ${$("pose").value.toLowerCase()}. ` +
     `Setting: ${$("setting").value.toLowerCase()}. ` +
     `Lighting: ${$("lighting").value.toLowerCase()}.`
@@ -474,6 +524,12 @@ function buildPrompt() {
   sections.push(`STYLE\n${$("style").value}.`);
 
   if ($("notes").value.trim()) sections.push(`NOTES\n${$("notes").value.trim()}`);
+
+  sections.push(
+    "REQUIREMENTS\n" +
+    "A single character, clearly the focus of the image. Correct anatomy with natural hands. " +
+    "No text, captions, watermarks, signatures, or borders."
+  );
 
   $("output").value = "Generate an image.\n\n" + sections.join("\n\n");
 }
@@ -490,6 +546,8 @@ function randomize() {
   $("hair").value = pick(DATA.hairs);
   $("eyes").value = pick(DATA.eyes);
   $("skin").value = pick(DATA.skins);
+  $("expression").value = pick(DATA.expressions);
+  $("framing").value = pick(DATA.framings);
   $("weapon").value = pick(DATA.weapons);
   $("armour").value = pick(DATA.armours);
   $("setting").value = pick(DATA.settings);
@@ -501,6 +559,7 @@ function randomize() {
   });
   toggleOther("ancestry", "ancestry-other");
   toggleOther("class", "class-other");
+  toggleTraitOthers();
   buildPrompt();
 }
 
@@ -511,6 +570,7 @@ function clearAll() {
   refreshAncestries();
   toggleOther("ancestry", "ancestry-other");
   toggleOther("class", "class-other");
+  toggleTraitOthers();
   buildPrompt();
 }
 
@@ -521,9 +581,11 @@ function init() {
   fillSelect($("gender"), DATA.genders);
   fillSelect($("age"), DATA.ages);
   fillSelect($("build"), DATA.builds);
-  fillSelect($("hair"), DATA.hairs);
-  fillSelect($("eyes"), DATA.eyes);
-  fillSelect($("skin"), DATA.skins);
+  fillSelect($("hair"), [...DATA.hairs, "Other"]);
+  fillSelect($("eyes"), [...DATA.eyes, "Other"]);
+  fillSelect($("skin"), [...DATA.skins, "Other"]);
+  fillSelect($("expression"), DATA.expressions);
+  fillSelect($("framing"), DATA.framings);
   fillSelect($("weapon"), DATA.weapons);
   fillSelect($("armour"), DATA.armours);
   fillChecks($("accessories"), DATA.accessories);
@@ -535,6 +597,8 @@ function init() {
   $("ruleset").addEventListener("change", refreshAncestries);
   $("ancestry").addEventListener("change", () => toggleOther("ancestry", "ancestry-other"));
   $("class").addEventListener("change", () => toggleOther("class", "class-other"));
+  FREE_TEXT_TRAITS.forEach(id =>
+    $(id).addEventListener("change", () => toggleOther(id, `${id}-other`)));
 
   document.querySelectorAll("#form-panel select, #form-panel input, #form-panel textarea")
     .forEach(el => el.addEventListener("input", buildPrompt));
