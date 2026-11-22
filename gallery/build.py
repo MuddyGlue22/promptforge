@@ -113,6 +113,14 @@ def original_link(item):
             f'the full-size image exactly as downloaded from OpenMov, before it was resized for the web.')
 
 
+BUILDER_NOTE = ('      <p class="builder-note">The builder has been improved since this image was made, so these '
+                'settings now give a slightly different prompt from the one shown above.</p>')
+
+
+def builder_note(item):
+    return BUILDER_NOTE if item.get("builder_changed") else ""
+
+
 def count_word(n):
     return NUMBERS.get(n, str(n))
 
@@ -159,6 +167,7 @@ def build_comparisons(comps, by_slug):
             "INTRO": e(cmp["intro"]), "ENTRIES": "\n".join(entries),
             "PROMPT": e(cmp["prompt"]), "TRY_URL": e(try_url(cmp["settings"])),
             "SETTINGS": settings_rows(cmp["settings"]), "RELATED": related,
+            "BUILDER_NOTE": builder_note(cmp),
         }
         (out_dir / cmp["slug"]).mkdir(parents=True, exist_ok=True)
         (out_dir / cmp["slug"] / "index.html").write_text(fill(tpl, values))
@@ -220,7 +229,7 @@ def main():
             "FULL_W": str(c["full"][0]), "FULL_H": str(c["full"][1]), "ALT": e(c["alt"]),
             "MODEL": e(c["model"]), "STYLE": e(s["style"]), "FRAMING": e(s["framing"]),
             "NOTE": e(c["note"]), "PROMPT": e(c["prompt"]), "TRY_URL": e(try_url(s)),
-            "SETTINGS": settings_rows(s),
+            "SETTINGS": settings_rows(s), "BUILDER_NOTE": builder_note(c),
             "ORIGINAL": e(c["original"]), "ORIGINAL_LABEL": e(c["original_label"]),
             "PREV_PAGE": e(prev["page"]), "PREV_TITLE": e(prev["title"]),
             "NEXT_PAGE": e(nxt["page"]), "NEXT_TITLE": e(nxt["title"]),

@@ -548,3 +548,8 @@ a.button:hover { filter: brightness(1.05); }
   .compare-thumbs { grid-template-columns: repeat(2, 1fr); }
   .related img { width: 84px; }
 }
+
+/* Small explanatory line under a form field. */
+.field-hint { display: block; margin-top: 6px; font-size: 12.5px; font-weight: 400; color: var(--muted); }
+select:disabled { opacity: 0.6; cursor: not-allowed; }
+.builder-note { margin: 10px 0 0; font-size: 13px; color: var(--muted); }

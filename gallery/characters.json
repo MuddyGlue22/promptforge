@@ -377,7 +377,8 @@
   "model": "WAN 2.7 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, with furs, bare muscular arms, war paint, and a wild, untamed look. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: black, eyes: brown, skin: green, expression: fierce.\n\nGEAR\nwearing leather, carrying greataxe, accessories: cloak, gauntlets.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: mid-action. Setting: frozen tundra. Lighting: dramatic side light.\n\nSTYLE\nDigital concept art.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "Fierce expression, tusks, war paint and a huge double-bladed greataxe against a dark sky. WAN drew the cloak and fur trim well, but the gauntlets became fur-trimmed bracers, and she is striding barefoot across the frozen tundra with her toes in the snow.",
-  "alt": "AI-generated concept art of a muscular green-skinned orc woman with black hair, tusks and red war paint, wearing fur-trimmed leather and a dark cloak, carrying a double-bladed greataxe across a frozen tundra"
+  "alt": "AI-generated concept art of a muscular green-skinned orc woman with black hair, tusks and red war paint, wearing fur-trimmed leather and a dark cloak, carrying a double-bladed greataxe across a frozen tundra",
+  "builder_changed": true
  },
  {
   "slug": "13-dwarf-warrior-miniature",
@@ -411,6 +412,7 @@
   "model": "Seedream 5 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a warrior, in practical, battle-worn gear, with visible scars and a well-used weapon. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: shaved, eyes: brown, skin: tan, expression: determined.\n\nGEAR\nwearing plate, carrying greataxe, accessories: cloak, pauldron, gauntlets, tabard.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.\n\nSTYLE\nA hand-painted tabletop miniature figure on a round base, photographed close up, with fine brushwork, crisp highlights, and the setting shown as a small painted diorama.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "It really does look like a painted figure on your gaming table: a round black base, glossy highlights on the armour and a tiny diorama of burning ruins behind. Seedream gave him a ginger beard and a colourful star tabard. As in the photorealistic versions, the greataxe shrank to a one-handed axe. This is the same character as the four-model comparison, with only the art style changed.",
-  "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, plate armour, green cloak, star tabard and an axe, standing on a round base in front of a small burning-ruins diorama"
+  "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, plate armour, green cloak, star tabard and an axe, standing on a round base in front of a small burning-ruins diorama",
+  "builder_changed": true
  }
 ]

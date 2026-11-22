@@ -102,6 +102,7 @@
 
       <label>Framing
         <select id="framing"></select>
+        <span class="field-hint" id="framing-hint" hidden>Painted miniatures are always full body, so the base is in view.</span>
       </label>
 
       <label>Setting
@@ -274,6 +275,16 @@ const CLASS_DETAILS = {
   "Alchemist": "with bandoliers of glass vials, goggles, stained gloves, and a bubbling flask in hand",
   "Champion": "in shining armour bearing a deity's emblem, with a shield raised protectively"
 };
+
+// Weapons that models tend to shrink or misread get a fuller description.
+const WEAPON_DETAILS = {
+  "Greataxe": "a massive two-handed greataxe with a long haft and a broad, heavy blade",
+  "Glaive": "a glaive, a long polearm topped with a single curved blade"
+};
+
+// A miniature only reads as one when the whole figure and its base are in view.
+const MINIATURE_STYLE = "Painted miniature";
+const MINIATURE_FRAMING = "full-body shot, the entire figure visible from head to toe, standing on its round base";
 
 const FRAMING_DETAILS = {
   "Full body": "full-body shot, the entire character visible from head to toe",
@@ -468,7 +479,8 @@ function buildPrompt() {
   sections.push(`APPEARANCE\n${appearance.join(", ")}.`);
   
   const weapon = $("weapon").value;
-  const handsPart = weapon === "None visible" ? "empty hands" : `carrying ${weapon.toLowerCase()}`;
+  const handsPart = weapon === "None visible" ? "empty hands"
+    : `carrying ${WEAPON_DETAILS[weapon] || weapon.toLowerCase()}`;
   const accessories = [...$("accessories").querySelectorAll("input:checked")].map(cb => cb.value);
   const gear = [`wearing ${$("armour").value.toLowerCase()}`, handsPart];
   if (accessories.length) gear.push(`accessories: ${accessories.join(", ").toLowerCase()}`);
@@ -476,7 +488,7 @@ function buildPrompt() {
 
   sections.push(
     "SCENE\n" +
-    `Framing: ${FRAMING_DETAILS[$("framing").value]}. ` +
+    `Framing: ${$("style").value === MINIATURE_STYLE ? MINIATURE_FRAMING : FRAMING_DETAILS[$("framing").value]}. ` +
     `Pose: ${$("pose").value.toLowerCase()}. ` +
     `Setting: ${$("setting").value.toLowerCase()}. ` +
     `Lighting: ${$("lighting").value.toLowerCase()}.`
@@ -490,6 +502,22 @@ function buildPrompt() {
   sections.push("REQUIREMENTS\n" + requirementsText());
 
   $("output").value = "Generate an image.\n\n" + sections.join("\n\n");
+}
+
+// Painted miniatures are always full body: lock Framing while that style is chosen,
+// and give back the previous choice when the style changes.
+function syncStyleFraming() {
+  const framing = $("framing");
+  const mini = $("style").value === MINIATURE_STYLE;
+  if (mini && !framing.disabled) {
+    framing.dataset.previous = framing.value;
+    framing.value = "Full body";
+  } else if (!mini && framing.disabled) {
+    if (framing.dataset.previous) framing.value = framing.dataset.previous;
+    delete framing.dataset.previous;
+  }
+  framing.disabled = mini;
+  $("framing-hint").hidden = !mini;
 }
 
 // ---------- randomise / clear ----------
@@ -513,6 +541,8 @@ function randomize() {
   $("lighting").value = pick(DATA.lightings);
   $("pose").value = pick(DATA.poses);
   $("style").value = pick(DATA.styles);
+  delete $("framing").dataset.previous;
+  syncStyleFraming();
   document.querySelectorAll("#accessories input").forEach(cb => {
     cb.checked = Math.random() < 0.25;
   });
@@ -528,6 +558,9 @@ function clearAll() {
   const model = $("target-model").value; // a preference, not part of the character
   document.querySelectorAll("select").forEach(sel => sel.selectedIndex = 0);
   $("target-model").value = model;
+  $("framing").disabled = false;
+  delete $("framing").dataset.previous;
+  syncStyleFraming();
   refreshAncestries();
   toggleOther("ancestry", "ancestry-other");
   toggleOther("class", "class-other");
@@ -567,6 +600,7 @@ function applyUrlSettings() {
   toggleOther("class", "class-other");
   toggleTraitOthers();
   updateAncestryFields();
+  syncStyleFraming();
 }
 
 // ---------- copy ----------
@@ -637,6 +671,7 @@ function init() {
     updateAncestryFields();
   });
   $("class").addEventListener("change", () => toggleOther("class", "class-other"));
+  $("style").addEventListener("change", syncStyleFraming);
   FREE_TEXT_TRAITS.forEach(id =>
     $(id).addEventListener("change", () => toggleOther(id, `${id}-other`)));
 
