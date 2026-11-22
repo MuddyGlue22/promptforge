@@ -62,7 +62,8 @@
   "model": "Nano Banana 2.1",
   "prompt": "Generate an image.\n\nSUBJECT\nA young, slender female feline humanoid with fur, whiskers, and retractable claws, portrayed as a rogue, in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: black, eyes: green, fur: grey tabby, expression: mischievous.\n\nGEAR\nwearing leather, carrying dagger pair, accessories: hood, satchel.\n\nSCENE\nFraming: medium shot, framed from the waist up. Pose: crouched and alert. Setting: ruined city. Lighting: moonlight.\n\nSTYLE\nDigital concept art.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "Nano Banana nailed the grey tabby fur, green eyes, hood and satchel, and the mischievous grin is spot on. It ignored the waist-up framing, though, and drew her full length so the crouch fits. Her ringed tail is more raccoon than tabby.",
-  "alt": "AI-generated concept art of a grey tabby cat-folk rogue in a dark hood and leather armour, crouched on rubble in moonlit ruins with a dagger in each hand and a satchel at her hip"
+  "alt": "AI-generated concept art of a grey tabby cat-folk rogue in a dark hood and leather armour, crouched on rubble in moonlit ruins with a dagger in each hand and a satchel at her hip",
+  "builder_changed": true
  },
  {
   "slug": "03-faerie-sorcerer",
