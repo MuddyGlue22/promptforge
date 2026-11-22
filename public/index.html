@@ -235,9 +235,23 @@ const DATA = {
   // Prompt wording is tuned per model family (see requirementsText).
   targetModels: ["Most models (GPT Image, Seedream, etc.)", "FLUX"],
   styles: [
-    "Painterly fantasy illustration", "Dark fantasy painting", "Watercolour",
-    "Digital concept art", "Ink and wash", "Classic oil painting", "Anime-inspired"
+    "Painterly fantasy illustration", "Dark fantasy painting", "Classic oil painting",
+    "Watercolour", "Ink and wash", "Pencil sketch", "Storybook illustration",
+    "Digital concept art", "Photorealistic", "Painted miniature", "Comic book",
+    "Anime-inspired", "Pixel art", "Stained glass"
   ]
+};
+
+// Fuller wording for styles that need more than their name to land well.
+// Styles not listed here go into the prompt as their name.
+const STYLE_DETAILS = {
+  "Photorealistic": "Photorealistic, like a still from a high-budget fantasy film: real skin and material textures, practical costume and props, and a shallow depth of field",
+  "Painted miniature": "A hand-painted tabletop miniature figure on a round base, photographed close up, with fine brushwork, crisp highlights, and the setting shown as a small painted diorama",
+  "Comic book": "Comic book art: bold ink outlines, flat colours, and dramatic shading",
+  "Pixel art": "Pixel art in a detailed retro game style, with a limited colour palette and crisp, visible pixels",
+  "Pencil sketch": "Graphite pencil sketch on textured paper, with confident linework and soft shading",
+  "Storybook illustration": "Classic storybook illustration: delicate pen lines and gentle colour washes, like a fairy-tale picture book",
+  "Stained glass": "A stained glass window design, with bold lead lines and luminous jewel-toned glass"
 };
 
 // Full descriptions used in the generated prompt (not shown in the dropdown)
@@ -468,7 +482,8 @@ function buildPrompt() {
     `Lighting: ${$("lighting").value.toLowerCase()}.`
   );
 
-  sections.push(`STYLE\n${$("style").value}.`);
+  const style = $("style").value;
+  sections.push(`STYLE\n${STYLE_DETAILS[style] || style}.`);
 
   if ($("notes").value.trim()) sections.push(`NOTES\n${$("notes").value.trim()}`);
 
