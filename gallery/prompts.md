@@ -20,12 +20,12 @@
 | # | Character | Model | What's new since last run |
 |---|---|---|---|
 | 1 | Clank Guardian | Seedream 5 Pro | Prompt unchanged; fresh roll |
-| 2 | Katari Rogue | Nano Banana 2.1 | Big-cat Katari, leopard-rosette fur |
+| 2 | Katari Rogue | Nano Banana 2.1 | Big-cat Katari, leopard-rosette fur, "young adult" |
 | 3 | Faerie Sorcerer | Qwen Image Pro | Insectile Faerie (rulebook) |
 | 4 | Tiefling Warlock | Nano Banana 2.1 | Prompt unchanged; fresh roll |
 | 5 | Dwarf Cleric | Seedream 5 Pro | Prompt unchanged; fresh roll |
 | 6 | Dragonborn Paladin | WAN 2.7 Pro | Prompt unchanged; fresh roll |
-| 7 | Halfling Bard | Nano Banana 2.1 | Prompt unchanged; fresh roll |
+| 7 | Halfling Bard | Nano Banana 2.1 | "Young" now says "young adult" (was refused by the content filter) |
 | 8 | Leshy Druid | Qwen Image Pro | Prompt unchanged; fresh roll |
 | 9 | Tengu Alchemist | Qwen Image Pro | Prompt unchanged; fresh roll |
 | 10 | Lizardfolk Ranger | WAN 2.7 Pro | Prompt unchanged; fresh roll |
@@ -74,7 +74,7 @@ A single character, clearly the focus of the image. Correct anatomy with natural
 Generate an image.
 
 SUBJECT
-A young, slender female katari, a feline humanoid with the powerful frame and broad, strong-jawed face of a big cat like a tiger, lion, or leopard rather than a house cat, with vertically slit pupils, high triangular ears, long whiskers, and retractable claws, portrayed as a rogue, in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look. A fantasy tabletop RPG character.
+A young adult, slender female katari, a feline humanoid with the powerful frame and broad, strong-jawed face of a big cat like a tiger, lion, or leopard rather than a house cat, with vertically slit pupils, high triangular ears, long whiskers, and retractable claws, portrayed as a rogue, in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look. A fantasy tabletop RPG character.
 
 APPEARANCE
 hair: black, eyes: green, fur: smoky grey with dark leopard rosettes, expression: mischievous.
@@ -219,7 +219,7 @@ A single character, clearly the focus of the image. Correct anatomy with natural
 Generate an image.
 
 SUBJECT
-A young, slender female halfling, small and nimble, about half the height of a human, with bare, sturdy feet, portrayed as a bard, with a musical instrument close at hand, flamboyant layered clothing, and a confident, expressive bearing. A fantasy tabletop RPG character.
+A young adult, slender female halfling, small and nimble, about half the height of a human, with bare, sturdy feet, portrayed as a bard, with a musical instrument close at hand, flamboyant layered clothing, and a confident, expressive bearing. A fantasy tabletop RPG character.
 
 APPEARANCE
 hair: brown, eyes: blue, skin: tan, expression: cheerful.

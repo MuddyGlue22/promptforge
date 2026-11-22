@@ -479,7 +479,8 @@ function buildPrompt() {
 
   const sections = [];
 
-  const age = $("age").value.toLowerCase();
+  // "Young" alone can read as a child, which some image models refuse; say adult plainly.
+  const age = $("age").value === "Young" ? "young adult" : $("age").value.toLowerCase();
   const subject =
     `${indefinite(age)} ${age}, ${$("build").value.toLowerCase()} ${$("gender").value.toLowerCase()} ` +
     `${ancestry}, portrayed as ${classDesc}.`;

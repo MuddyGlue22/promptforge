@@ -222,7 +222,8 @@
   "model": "Nano Banana 2.1",
   "prompt": "Generate an image.\n\nSUBJECT\nA young, slender female halfling, small and nimble, about half the height of a human, with bare, sturdy feet, portrayed as a bard, with a musical instrument close at hand, flamboyant layered clothing, and a confident, expressive bearing. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: brown, eyes: blue, skin: tan, expression: cheerful.\n\nGEAR\nwearing leather, carrying rapier, accessories: scarf, feathered cap.\n\nSCENE\nFraming: medium shot, framed from the waist up. Pose: relaxed stance. Setting: tavern. Lighting: warm firelight.\n\nSTYLE\nAnime-inspired.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "Bright, busy and cheerful, exactly what the anime-inspired style asks for: a feathered cap, a rainbow scarf, a rapier and a big grin by the fire. Nano Banana gave her a lute too, inferred from the Bard class, even though no instrument was in the prompt.",
-  "alt": "AI-generated anime-style illustration of a smiling halfling bard with curly brown hair and blue eyes, wearing a feathered cap, a colourful scarf and leather armour, holding a lute in a firelit tavern"
+  "alt": "AI-generated anime-style illustration of a smiling halfling bard with curly brown hair and blue eyes, wearing a feathered cap, a colourful scarf and leather armour, holding a lute in a firelit tavern",
+  "builder_changed": true
  },
  {
   "slug": "08-leshy-druid",
