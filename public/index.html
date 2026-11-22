@@ -181,8 +181,8 @@ const DATA = {
 
   classes: {
     "Daggerheart": [
-      "Bard", "Druid", "Guardian", "Ranger", "Rogue", "Seraph",
-      "Sorcerer", "Warrior", "Wizard", "Other"
+      "Assassin", "Bard", "Brawler", "Druid", "Guardian", "Ranger", "Rogue",
+      "Seraph", "Sorcerer", "Warlock", "Warrior", "Witch", "Wizard", "Other"
     ],
     "D&D 5e": [
       "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk",
@@ -261,6 +261,9 @@ const CLASS_DETAILS = {
   "Druid": "dressed in natural materials like leaves, bark, and bone, with moss or vines woven into their gear",
   "Guardian": "braced behind a heavy shield, broad-shouldered and firmly planted, in battle-scarred armour",
   "Ranger": "in weathered, earth-toned travel layers, with a quiver, a hunting knife, and road-worn boots",
+  "Assassin": "hooded or masked, in dark, close-fitting clothing built for silence, with concealed blades and a cold, focused stare",
+  "Brawler": "with wrapped fists, scarred knuckles, and a powerful, ready fighting stance, needing no weapon but their own body",
+  "Witch": "hung with charms, herbs, bones, and talismans, with an air of old, wild magic and a faint otherworldly presence close by",
   "Rogue": "in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look",
   "Seraph": "in gleaming armour marked with holy symbols, surrounded by a faint radiant light",
   "Sorcerer": "with raw magic crackling around their hands and subtle signs of a magical bloodline in their features",
@@ -535,6 +538,9 @@ const CLASS_GEAR = {
   "Monk":      { weapons: ["Staff", "Glaive", "None visible"], armour: ["Cloth robes", "Light cloak", "None"] },
   "Paladin":   { weapons: ["Longsword", "Warhammer", "Glaive"], armour: ["Plate", "Half plate", "Chain shirt"] },
   "Ranger":    { weapons: ["Longbow", "Shortbow", "Dagger pair", "Longsword"], armour: ["Leather", "Studded leather", "Chain shirt", "Light cloak"] },
+  "Assassin":  { weapons: ["Dagger pair", "Crossbow", "Rapier", "Shortbow"], armour: ["Leather", "Studded leather", "Light cloak"] },
+  "Brawler":   { weapons: ["None visible"], armour: ["Leather", "Light cloak", "None"] },
+  "Witch":     { weapons: ["Staff", "Spellbook", "Dagger pair", "None visible"], armour: ["Cloth robes", "Light cloak", "Leather"] },
   "Rogue":     { weapons: ["Dagger pair", "Rapier", "Shortbow", "Crossbow"], armour: ["Leather", "Studded leather", "Light cloak"] },
   "Seraph":    { weapons: ["Longsword", "Warhammer", "Glaive", "Staff"], armour: ["Plate", "Half plate", "Chain shirt", "Ceremonial vestments"] },
   "Sorcerer":  { weapons: ["Staff", "Dagger pair", "None visible"], armour: ["Cloth robes", "Light cloak", "Leather"] },
@@ -542,7 +548,7 @@ const CLASS_GEAR = {
   "Warrior":   { weapons: ["Longsword", "Greataxe", "Warhammer", "Glaive", "Longbow"], armour: ["Chain shirt", "Scale mail", "Half plate", "Plate", "Leather"] },
   "Wizard":    { weapons: ["Staff", "Spellbook", "None visible"], armour: ["Cloth robes", "Light cloak", "Ceremonial vestments"] }
 };
-const SPELLCASTERS = ["Bard", "Champion", "Cleric", "Druid", "Paladin", "Ranger", "Seraph", "Sorcerer", "Warlock", "Wizard"];
+const SPELLCASTERS = ["Bard", "Champion", "Cleric", "Druid", "Paladin", "Ranger", "Seraph", "Sorcerer", "Warlock", "Witch", "Wizard"];
 const NOTHING_TO_LEAN_ON = ["None visible", "Spellbook", "Dagger pair"];
 
 function randomPose(cls, weapon) {
