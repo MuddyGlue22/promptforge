@@ -5,7 +5,7 @@ Usage (from the repo root):  python3 gallery/build.py
 
 Writes:
 - public/gallery/img/<slug>-600.webp and <slug>-full.webp (resized only, never cropped)
-- public/gallery/original/<slug>.<ext>  (byte-for-byte copy of the download, provenance data intact)
+- public/gallery/original/<slug>.<ext>  (byte-for-byte copy of the download, never re-encoded)
 - public/gallery/index.html            (overview grid)
 - public/gallery/<page>/index.html     (one page per character, e.g. /gallery/tiefling-warlock/)
 - public/sitemap.xml and public/robots.txt
@@ -59,7 +59,7 @@ def human_size(n):
 
 
 def family(model):
-    return re.sub(r"\s[\d.]+$", "", model)  # "Seedream 5.5" -> "Seedream"
+    return re.sub(r"(\s(\d[\d.]*|Pro|Image))+$", "", model)  # "Qwen Image Pro" -> "Qwen", "WAN 2.7 Pro" -> "WAN"
 
 
 def page_name(slug):
