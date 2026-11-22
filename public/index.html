@@ -308,14 +308,14 @@ const ANCESTRY_DETAILS = {
   "Faun": "a faun, a goat-like humanoid with curving horns, square pupils, a fur-covered goat-like lower body, and cloven hooves",
   "Firbolg": "a firbolg, a tall, muscular bovine humanoid covered in fur, with a broad nose, long drooping ears, and often horns",
   "Katari": "a feline humanoid with fur, whiskers, and retractable claws",
-  "Drakona": "a draconic humanoid with scales, horns, and a tail",
-  "Faerie": "a small winged fey with translucent wings and luminous features",
+  "Drakona": "a drakona, a wingless dragon in humanoid form, with thick scales and long, sharp teeth",
+  "Faerie": "a faerie, a winged humanoid with membranous, insect-like wings and subtle insectile features",
   "Fungril": "a mushroom-folk humanoid with a cap of fungus instead of hair and spore-dusted skin",
-  "Galapa": "a turtle-like humanoid with a hard shell on the back and a slow, deliberate manner",
+  "Galapa": "a galapa, a turtle-like humanoid with a large, domed shell and a slow, deliberate manner",
   "Giant": "a giant, a towering humanoid around eight feet tall with broad shoulders, long arms, and a massive frame, clearly dwarfing the doorways, furniture, and any people nearby",
   "Goblin": "a small, quick-witted humanoid with large ears and sharp features",
-  "Infernis": "a fiend-touched humanoid with horns and ember-colored eyes",
-  "Simiah": "an ape-like humanoid with long arms, a thick brow, and expressive features",
+  "Infernis": "an infernis, a demon-descended humanoid with horns, pointed ears, sharp canine teeth, long fingers with pointed nails, and sometimes a long, thin tail",
+  "Simiah": "a simiah, a monkey- or ape-like humanoid with long limbs, dexterous prehensile feet, and sometimes a prehensile tail",
 
   // D&D 5e / Pathfinder 2e / Generic Fantasy (Goblin above is shared)
   "Human": "a human",
@@ -349,7 +349,7 @@ const SURFACE_LABELS = {
 };
 
 const NO_HAIR_ANCESTRIES = [
-  "Clank", "Ribbet", "Galapa", "Fungril", "Infernis", "Drakona",
+  "Clank", "Ribbet", "Galapa", "Fungril", "Drakona",
   "Dragonborn", "Lizardfolk", "Tengu", "Leshy"
 ];
 
@@ -430,6 +430,9 @@ function stripArticle(text) {
 // Where a ruleset's version of an ancestry looks different from the usual one.
 const RULESET_ANCESTRY_DETAILS = {
   "Daggerheart": {
+    "Dwarf": "a dwarf, short and broad with a square frame, dense muscle, thick hair, and often an elaborately styled beard, sometimes with gemstones embedded in the skin",
+    "Goblin": "a goblin, a small humanoid with large eyes and huge membranous ears, each about the size of their head",
+    "Halfling": "a halfling, small, about three and a half feet tall, with large, hairy bare feet and prominent rounded ears",
     "Orc": "an orc with square features, boar-like tusks jutting from the lower jaw, often decorated with ornaments, pointed ears, and a muscular build",
     "Gnome": "a gnome, about three feet tall, with a large conical head, softly pointed ears, wide eyes, a square frame with short legs, and long arms with large, dexterous hands"
   }

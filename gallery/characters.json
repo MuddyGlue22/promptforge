@@ -93,7 +93,8 @@
   "model": "Qwen Image Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn ageless, slender non-binary small winged fey with translucent wings and luminous features, portrayed as a sorcerer, with raw magic crackling around their hands and subtle signs of a magical bloodline in their features. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: silver, eyes: violet, skin: pale, expression: serene.\n\nGEAR\nwearing cloth robes, empty hands, accessories: circlet.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: casting a spell. Setting: forest. Lighting: magical glow.\n\nSTYLE\nWatercolour.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "A soft, genuinely watercolour result: silver hair, violet eyes, iridescent wings and crackling magic in both hands, with the circlet sitting neatly on the brow. Qwen added faint glowing markings on the face and arms that weren't in the prompt but suit a sorcerer.",
-  "alt": "AI-generated watercolour of a pale, silver-haired faerie with violet eyes and iridescent wings, wearing simple robes and a circlet, holding crackling purple magic in both hands in a misty forest"
+  "alt": "AI-generated watercolour of a pale, silver-haired faerie with violet eyes and iridescent wings, wearing simple robes and a circlet, holding crackling purple magic in both hands in a misty forest",
+  "builder_changed": true
  },
  {
   "slug": "04-tiefling-warlock",
