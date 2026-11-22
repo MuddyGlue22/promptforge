@@ -164,7 +164,8 @@ const DATA = {
     "Daggerheart": [
       "Clank", "Ribit", "Katari", "Drakona", "Faerie", "Fungril",
       "Galapa", "Giant", "Goblin", "Greataxe Orc", "Infernis",
-      "Simiah", "Seraph", "Wyrmling", "Other"
+      "Simiah", "Seraph", "Wyrmling",
+      "Aetheris", "Earthkin", "Emberkin", "Gnome", "Skykin", "Tidekin", "Other"
     ],
     "D&D 5e": [
       "Human", "Elf", "Dwarf", "Halfling", "Dragonborn", "Gnome",
@@ -297,6 +298,11 @@ const FRAMING_DETAILS = {
 };
 
 const ANCESTRY_DETAILS = {
+  "Aetheris": "an aetheris, a winged humanoid descended from angels, with feathered wings, vibrant colouring, glowing sacred markings on the skin, and sometimes a faint halo",
+  "Earthkin": "an earthkin, a humanoid of flesh and earth, with skin of stone, clay, or sand, crystal formations growing through the hair, and old wounds showing as fissures in the stone",
+  "Emberkin": "an emberkin, a humanoid of flesh and fire, with flaming hair, glowing ember-like eyes, pointed ears curved like tongues of flame, and a warm glow flickering through the skin",
+  "Skykin": "a skykin, a humanoid of flesh and air, with semi-translucent, sky-coloured skin, floating hair like wisps of cloud, elongated pointed ears, and a constant breeze fluttering their clothes",
+  "Tidekin": "a tidekin, a humanoid of flesh and water, with finlike ears, webbed fingers, semi-translucent sea-coloured skin with colours shifting like waves, and hair that flows and ripples like water",
   "Clank": "a sentient, mechanical being of metal and gears, with visible rivets, hinges, and a glowing core",
   "Ribit": "a frog-like humanoid with smooth, damp skin, large eyes, and webbed hands and feet",
   "Katari": "a feline humanoid with fur, whiskers, and retractable claws",
@@ -422,11 +428,19 @@ function stripArticle(text) {
   return text.replace(/^(a|an)\s+/i, "");
 }
 
+// Where a ruleset's version of an ancestry looks different from the usual one.
+const RULESET_ANCESTRY_DETAILS = {
+  "Daggerheart": {
+    "Gnome": "a gnome, about three feet tall, with a large conical head, softly pointed ears, wide eyes, a square frame with short legs, and long arms with large, dexterous hands"
+  }
+};
+
 // Ancestry as a noun phrase with no leading article, e.g. "draconic humanoid with scales...".
 function ancestryText() {
   const choice = $("ancestry").value;
   if (choice === "Other") return stripArticle($("ancestry-other").value.trim()) || "humanoid of unusual ancestry";
-  return stripArticle(ANCESTRY_DETAILS[choice] || choice);
+  const own = (RULESET_ANCESTRY_DETAILS[$("ruleset").value] || {})[choice];
+  return stripArticle(own || ANCESTRY_DETAILS[choice] || choice);
 }
 
 // Class with its article and visual cues, e.g. "a wizard, with ink-stained fingers...".
