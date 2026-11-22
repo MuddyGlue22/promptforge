@@ -19,7 +19,7 @@
 | # | Character | Model | What's new since last run |
 |---|---|---|---|
 | 1 | Clank Guardian | Seedream 5 Pro | Prompt unchanged; fresh roll |
-| 2 | Katari Rogue | Nano Banana 2.1 | Big-cat Katari |
+| 2 | Katari Rogue | Nano Banana 2.1 | Big-cat Katari, leopard-rosette fur |
 | 3 | Faerie Sorcerer | Qwen Image Pro | Insectile Faerie (rulebook) |
 | 4 | Tiefling Warlock | Nano Banana 2.1 | Prompt unchanged; fresh roll |
 | 5 | Dwarf Cleric | Seedream 5 Pro | Prompt unchanged; fresh roll |
@@ -65,8 +65,9 @@ A single character, clearly the focus of the image. Correct anatomy with natural
 
 - **File name:** `02-katari-rogue`
 - **Model:** Nano Banana 2.1
+- **Changed:** fur is now "smoky grey with dark leopard rosettes" (was "grey tabby").
 - **Settings:** Daggerheart · Digital concept art · Waist up
-- **Builder link:** https://tavernportraits.com/?ruleset=Daggerheart&ancestry=Katari&class=Rogue&gender=Female&age=Young&build=Slender&hair=Black&eyes=Green&skin=Other&skin-other=grey+tabby&expression=Mischievous&weapon=Dagger+pair&armour=Leather&accessories=Hood%2CSatchel&framing=Waist+up&setting=Ruined+city&lighting=Moonlight&pose=Crouched+and+alert&style=Digital+concept+art&target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29
+- **Builder link:** https://tavernportraits.com/?ruleset=Daggerheart&ancestry=Katari&class=Rogue&gender=Female&age=Young&build=Slender&hair=Black&eyes=Green&skin=Other&skin-other=smoky+grey+with+dark+leopard+rosettes&expression=Mischievous&weapon=Dagger+pair&armour=Leather&accessories=Hood%2CSatchel&framing=Waist+up&setting=Ruined+city&lighting=Moonlight&pose=Crouched+and+alert&style=Digital+concept+art&target-model=Most+models+%28GPT+Image%2C+Seedream%2C+etc.%29
 
 ```text
 Generate an image.
@@ -75,7 +76,7 @@ SUBJECT
 A young, slender female katari, a feline humanoid with the powerful frame and broad, strong-jawed face of a big cat like a tiger, lion, or leopard rather than a house cat, with vertically slit pupils, high triangular ears, long whiskers, and retractable claws, portrayed as a rogue, in dark, close-fitting clothing with hidden blades and pouches, half in shadow, with a sly, watchful look. A fantasy tabletop RPG character.
 
 APPEARANCE
-hair: black, eyes: green, fur: grey tabby, expression: mischievous.
+hair: black, eyes: green, fur: smoky grey with dark leopard rosettes, expression: mischievous.
 
 GEAR
 wearing leather, carrying dagger pair, accessories: hood, satchel.
