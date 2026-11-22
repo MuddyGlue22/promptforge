@@ -164,7 +164,7 @@ def build_comparisons(comps, by_slug):
             "DESCRIPTION": e(f"The same {cmp['title']} prompt run on {models}: "
                              f"see how each AI image model interprets it, with the exact prompt and honest notes."),
             "OG_IMAGE": e(cmp["entries"][0]["name"]) + "-full.webp",
-            "INTRO": e(cmp["intro"]), "ENTRIES": "\n".join(entries),
+            "INTRO": e(cmp["intro"]), "ENTRIES": "\n".join(entries), "COLS": str(n),
             "PROMPT": e(cmp["prompt"]), "TRY_URL": e(try_url(cmp["settings"])),
             "SETTINGS": settings_rows(cmp["settings"]), "RELATED": related,
             "BUILDER_NOTE": builder_note(cmp),
@@ -180,13 +180,13 @@ def comparison_cards(comps):
             f'<img src="/gallery/img/{e(en["name"])}-600.webp" width="{en["thumb"][0]}" height="{en["thumb"][1]}" '
             f'alt="" loading="lazy">' for en in cmp["entries"])
         cards.append(
-            f'    <a class="compare-card" href="/gallery/compare/{e(cmp["slug"])}/">'
+            f'    <a class="compare-card" href="/gallery/compare/{e(cmp["slug"])}/" style="--cols: {len(cmp["entries"])}">'
             f'<span class="compare-thumbs">{thumbs}</span>'
             f'<span class="card-body"><span class="card-title">{e(cmp["title"])}: one prompt, '
             f'{count_word(len(cmp["entries"])).lower()} models</span>'
             f'<span class="chips">' + "".join(f'<span class="chip model">{e(en["model"])}</span>' for en in cmp["entries"])
             + '</span></span></a>')
-    return "\n".join(cards)
+    return '    <div class="comparison-list">\n' + "\n".join(cards) + "\n    </div>"
 
 
 def main():

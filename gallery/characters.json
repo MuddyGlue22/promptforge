@@ -402,7 +402,7 @@
     "Gauntlets",
     "Tabard"
    ],
-   "framing": "Three-quarter",
+   "framing": "Full body",
    "setting": "Ruined city",
    "lighting": "Warm firelight",
    "pose": "Relaxed stance",
@@ -410,9 +410,8 @@
    "target-model": "Most models (GPT Image, Seedream, etc.)"
   },
   "model": "Seedream 5 Pro",
-  "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a warrior, in practical, battle-worn gear, with visible scars and a well-used weapon. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: shaved, eyes: brown, skin: tan, expression: determined.\n\nGEAR\nwearing plate, carrying greataxe, accessories: cloak, pauldron, gauntlets, tabard.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.\n\nSTYLE\nA hand-painted tabletop miniature figure on a round base, photographed close up, with fine brushwork, crisp highlights, and the setting shown as a small painted diorama.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
-  "note": "It really does look like a painted figure on your gaming table: a round black base, glossy highlights on the armour and a tiny diorama of burning ruins behind. Seedream gave him a ginger beard and a colourful star tabard. As in the photorealistic versions, the greataxe shrank to a one-handed axe. This is the same character as the four-model comparison, with only the art style changed.",
-  "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, plate armour, green cloak, star tabard and an axe, standing on a round base in front of a small burning-ruins diorama",
-  "builder_changed": true
+  "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a warrior, in practical, battle-worn gear, with visible scars and a well-used weapon. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: shaved, eyes: brown, skin: tan, expression: determined.\n\nGEAR\nwearing plate, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.\n\nSCENE\nFraming: full-body shot, the entire figure visible from head to toe, standing on its round base. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.\n\nSTYLE\nA hand-painted tabletop miniature figure on a round base, photographed close up, with fine brushwork, crisp highlights, and the setting shown as a small painted diorama.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+  "note": "Exactly what the new framing was meant to fix: the whole figure and its round base are in view. The paint job is bold and colourful, with a red and gold star tabard, a ginger braided beard and gold trim on the armour, in front of a burning-city backdrop. The greataxe is now a proper long-hafted two-hander, held upright like a staff. It's the same character as the photorealistic four-model comparison, with only the art style changed.",
+  "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, dark plate armour with gold trim, a red and gold tabard and a tall two-handed greataxe, standing on a round base in front of a burning ruined city"
  }
 ]
