@@ -270,7 +270,7 @@ const CLASS_DETAILS = {
   "Sorcerer": "with raw magic crackling around their hands and subtle signs of a magical bloodline in their features",
   "Warrior": "in practical, battle-worn gear, with visible scars and a well-used weapon",
   "Wizard": "with ink-stained fingers, a satchel of scrolls, and faint arcane sigils glowing in the air nearby",
-  "Barbarian": "with furs, bare muscular arms, war paint, and a wild, untamed look",
+  "Barbarian": "with furs, powerful muscular arms, war paint, and a wild, untamed look",
   "Cleric": "with a prominently displayed holy symbol, vestments worn over armour, and a soft divine glow",
   "Fighter": "in well-maintained armour, with the disciplined bearing of a trained soldier",
   "Monk": "in simple, loose-fitting garments, with wrapped hands and a calm, centred posture",
@@ -278,6 +278,15 @@ const CLASS_DETAILS = {
   "Warlock": "with eldritch markings on the skin, an eerie otherworldly glow, and a token of their patron",
   "Alchemist": "with bandoliers of glass vials, goggles, stained gloves, and a bubbling flask in hand",
   "Champion": "in shining armour bearing a deity's emblem, with a shield raised protectively"
+};
+
+// Armour names that are ambiguous on their own ("wearing leather", "wearing none").
+const ARMOUR_DETAILS = {
+  "Leather": "leather armour",
+  "Studded leather": "studded leather armour",
+  "Plate": "full plate armour",
+  "Half plate": "half-plate armour",
+  "None": "no armour, just simple clothing"
 };
 
 // Weapons that models tend to shrink or misread get a fuller description.
@@ -503,7 +512,8 @@ function buildPrompt() {
   const handsPart = weapon === "None visible" ? "empty hands"
     : `carrying ${WEAPON_DETAILS[weapon] || weapon.toLowerCase()}`;
   const accessories = [...$("accessories").querySelectorAll("input:checked")].map(cb => cb.value);
-  const gear = [`wearing ${$("armour").value.toLowerCase()}`, handsPart];
+  const armour = $("armour").value;
+  const gear = [`wearing ${ARMOUR_DETAILS[armour] || armour.toLowerCase()}`, handsPart];
   if (accessories.length) gear.push(`accessories: ${accessories.join(", ").toLowerCase()}`);
   sections.push(`GEAR\n${gear.join(", ")}.`);
 

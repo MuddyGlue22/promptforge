@@ -2,6 +2,8 @@
 
 13 characters, regenerated from the live builder on 22 November 2026 so every prompt includes this week's fixes (big-cat Katari, insectile Faerie, two-handed greataxe, full-body miniatures and more). Same model for each character as last time, so the gallery shows what the builder changes did.
 
+**Updated mid-run (22 November):** armour now reads "leather armour", "full plate armour" and so on, "no armour" no longer reads as "wearing none", "Young" says "young adult", and the Barbarian lost "bare" (the Halfling Bard and Orc Barbarian were refused by content filters). Use these prompts, and **regenerate anything you made from the earlier version** of this file, except the Tiefling Warlock, Dwarf Cleric and Undead Wizard, which didn't change.
+
 ## Before you start
 
 - **Use paid credits.** OpenMov's commercial licence is "subject to payment of applicable fees", free images are watermarked, and Alibaba's terms (Qwen, WAN) make free trials evaluation-only.
@@ -50,7 +52,7 @@ APPEARANCE
 eyes: glowing, metal plating: weathered bronze with green verdigris, expression: determined.
 
 GEAR
-wearing plate, carrying warhammer, accessories: pauldron, tabard.
+wearing full plate armour, carrying warhammer, accessories: pauldron, tabard.
 
 SCENE
 Framing: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: castle courtyard. Lighting: overcast daylight.
@@ -80,7 +82,7 @@ APPEARANCE
 hair: black, eyes: green, fur: smoky grey with dark leopard rosettes, expression: mischievous.
 
 GEAR
-wearing leather, carrying dagger pair, accessories: hood, satchel.
+wearing leather armour, carrying dagger pair, accessories: hood, satchel.
 
 SCENE
 Framing: medium shot, framed from the waist up. Pose: crouched and alert. Setting: ruined city. Lighting: moonlight.
@@ -196,7 +198,7 @@ APPEARANCE
 eyes: amber, scales: burnished bronze, expression: determined.
 
 GEAR
-wearing plate, carrying longsword, accessories: cloak.
+wearing full plate armour, carrying longsword, accessories: cloak.
 
 SCENE
 Framing: three-quarter shot, framed from the knees up. Pose: leaning on weapon. Setting: desert ruins. Lighting: rim light.
@@ -225,7 +227,7 @@ APPEARANCE
 hair: brown, eyes: blue, skin: tan, expression: cheerful.
 
 GEAR
-wearing leather, carrying rapier, accessories: scarf, feathered cap.
+wearing leather armour, carrying rapier, accessories: scarf, feathered cap.
 
 SCENE
 Framing: medium shot, framed from the waist up. Pose: relaxed stance. Setting: tavern. Lighting: warm firelight.
@@ -254,7 +256,7 @@ APPEARANCE
 eyes: green, bark: mossy oak with small white blossoms, expression: serene.
 
 GEAR
-wearing none, carrying staff, accessories: satchel.
+wearing no armour, just simple clothing, carrying staff, accessories: satchel.
 
 SCENE
 Framing: full-body shot, the entire character visible from head to toe. Pose: relaxed stance. Setting: swamp. Lighting: soft natural light.
@@ -283,7 +285,7 @@ APPEARANCE
 eyes: amber, feathers: glossy black with a blue sheen, expression: mischievous.
 
 GEAR
-wearing leather, carrying crossbow, accessories: satchel, spectacles.
+wearing leather armour, carrying crossbow, accessories: satchel, spectacles.
 
 SCENE
 Framing: three-quarter shot, framed from the knees up. Pose: mid-action. Setting: ruined city. Lighting: magical glow.
@@ -312,7 +314,7 @@ APPEARANCE
 eyes: gold, scales: green, expression: wary.
 
 GEAR
-wearing studded leather, carrying longbow, accessories: hood.
+wearing studded leather armour, carrying longbow, accessories: hood.
 
 SCENE
 Framing: full-body shot, the entire character visible from head to toe. Pose: crouched and alert. Setting: swamp. Lighting: overcast daylight.
@@ -364,13 +366,13 @@ A single character, clearly the focus of the image. Correct anatomy with natural
 Generate an image.
 
 SUBJECT
-An adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, with furs, bare muscular arms, war paint, and a wild, untamed look. A fantasy tabletop RPG character.
+An adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, with furs, powerful muscular arms, war paint, and a wild, untamed look. A fantasy tabletop RPG character.
 
 APPEARANCE
 hair: black, eyes: brown, skin: green, expression: fierce.
 
 GEAR
-wearing leather, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, gauntlets.
+wearing leather armour, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, gauntlets.
 
 SCENE
 Framing: full-body shot, the entire character visible from head to toe. Pose: mid-action. Setting: frozen tundra. Lighting: dramatic side light.
@@ -400,7 +402,7 @@ APPEARANCE
 hair: shaved, eyes: brown, skin: tan, expression: determined.
 
 GEAR
-wearing plate, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.
+wearing full plate armour, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.
 
 SCENE
 Framing: full-body shot, the entire figure visible from head to toe, standing on its round base. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.
@@ -431,7 +433,7 @@ APPEARANCE
 hair: shaved, eyes: brown, skin: tan, expression: determined.
 
 GEAR
-wearing plate, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.
+wearing full plate armour, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.
 
 SCENE
 Framing: three-quarter shot, framed from the knees up. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.
@@ -460,7 +462,7 @@ APPEARANCE
 hair: shaved, eyes: brown, skin: tan, expression: determined.
 
 GEAR
-wearing plate, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.
+wearing full plate armour, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.
 
 SCENE
 Framing: full-body shot, the entire figure visible from head to toe, standing on its round base. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.

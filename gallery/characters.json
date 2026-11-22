@@ -29,7 +29,8 @@
   "model": "Seedream 5 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn adult, stocky male sentient, mechanical being of metal and gears, with visible rivets, hinges, and a glowing core, portrayed as a guardian, braced behind a heavy shield, broad-shouldered and firmly planted, in battle-scarred armour. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: glowing, metal plating: weathered bronze with green verdigris, expression: determined.\n\nGEAR\nwearing plate, carrying warhammer, accessories: pauldron, tabard.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: castle courtyard. Lighting: overcast daylight.\n\nSTYLE\nPainterly fantasy illustration.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "The free-text 'weathered bronze with green verdigris' came through beautifully, with the glowing eyes and chest core, a blue star tabard, the warhammer and the heavy shield from the Guardian class cues. The prompt asked for one pauldron and Seedream gave him a matching pair.",
-  "alt": "AI-generated painting of a bronze clockwork guardian with green verdigris, glowing eyes and chest core, a blue star tabard, a warhammer and a large wooden shield in a grey castle courtyard"
+  "alt": "AI-generated painting of a bronze clockwork guardian with green verdigris, glowing eyes and chest core, a blue star tabard, a warhammer and a large wooden shield in a grey castle courtyard",
+  "builder_changed": true
  },
  {
   "slug": "02-katari-rogue",
@@ -190,7 +191,8 @@
   "model": "WAN 2.7 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn adult, muscular male dragonborn, a tall draconic humanoid with a scaled, dragon-like head, a snout, and a powerful build, without a tail, portrayed as a paladin, in polished armour bearing a sacred emblem, with a tabard and an air of righteous resolve. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: amber, scales: burnished bronze, expression: determined.\n\nGEAR\nwearing plate, carrying longsword, accessories: cloak.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: leaning on weapon. Setting: desert ruins. Lighting: rim light.\n\nSTYLE\nDigital concept art.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "The burnished bronze scales, amber eyes, gleaming plate and sword planted in the sand all landed, set against warm desert ruins. Look closely at the hand on his chest, though: a steel gauntlet sits on top of a bare clawed hand, so it reads as an extra hand.",
-  "alt": "AI-generated concept art of a bronze-scaled dragonborn paladin in silver plate armour and a dark cloak, resting a longsword point-down in the sand of sunlit desert ruins"
+  "alt": "AI-generated concept art of a bronze-scaled dragonborn paladin in silver plate armour and a dark cloak, resting a longsword point-down in the sand of sunlit desert ruins",
+  "builder_changed": true
  },
  {
   "slug": "07-halfling-bard",
@@ -254,7 +256,8 @@
   "model": "Qwen Image Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn ageless, slender androgynous leshy, a small plant creature with a body of bark, leaves, and vines, and a gourd- or flower-like head, portrayed as a druid, dressed in natural materials like leaves, bark, and bone, with moss or vines woven into their gear. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: green, bark: mossy oak with small white blossoms, expression: serene.\n\nGEAR\nwearing none, carrying staff, accessories: satchel.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: relaxed stance. Setting: swamp. Lighting: soft natural light.\n\nSTYLE\nWatercolour.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "A lovely, delicate watercolour. Qwen built the whole body from bark and moss with little white blossoms, and topped it with a gourd for a head, a nice nod to gourd leshies. The prompt asked for no armour, so the leaf skirt and straps are Qwen's own costume choices.",
-  "alt": "AI-generated watercolour of a small bark-skinned leshy druid with a gourd-shaped head, green eyes and white blossoms, dressed in leaves and moss and holding a twisted wooden staff beside a misty swamp"
+  "alt": "AI-generated watercolour of a small bark-skinned leshy druid with a gourd-shaped head, green eyes and white blossoms, dressed in leaves and moss and holding a twisted wooden staff beside a misty swamp",
+  "builder_changed": true
  },
  {
   "slug": "09-tengu-alchemist",
@@ -286,7 +289,8 @@
   "model": "Qwen Image Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn adult, lanky male tengu, a bird-like humanoid with a sharp beak, feathered head, and taloned hands, portrayed as an alchemist, with bandoliers of glass vials, goggles, stained gloves, and a bubbling flask in hand. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: amber, feathers: glossy black with a blue sheen, expression: mischievous.\n\nGEAR\nwearing leather, carrying crossbow, accessories: satchel, spectacles.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: mid-action. Setting: ruined city. Lighting: magical glow.\n\nSTYLE\nInk and wash.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "Full of character: glossy black feathers with a blue sheen, a hooked beak, potion bottles everywhere and a crossbow on his back. The spectacles became brass goggles, and his clawed hands come out of leather gloves rather than the feathers you might expect.",
-  "alt": "AI-generated ink-and-wash illustration of a black-feathered crow-like tengu alchemist with amber eyes and brass goggles, wearing a leather harness full of potion vials and holding a glowing flask in ruined city streets"
+  "alt": "AI-generated ink-and-wash illustration of a black-feathered crow-like tengu alchemist with amber eyes and brass goggles, wearing a leather harness full of potion vials and holding a glowing flask in ruined city streets",
+  "builder_changed": true
  },
  {
   "slug": "10-lizardfolk-ranger",
@@ -316,7 +320,8 @@
   "model": "WAN 2.7 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nAn adult, athletic female lizardfolk, a reptilian humanoid with a long snout, sharp teeth, and a thick tail, portrayed as a ranger, in weathered, earth-toned travel layers, with a quiver, a hunting knife, and road-worn boots. A fantasy tabletop RPG character.\n\nAPPEARANCE\neyes: gold, scales: green, expression: wary.\n\nGEAR\nwearing studded leather, carrying longbow, accessories: hood.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: crouched and alert. Setting: swamp. Lighting: overcast daylight.\n\nSTYLE\nPainterly fantasy illustration.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "Green scales, gold eyes, studded leather and a long tail curling through the swamp. WAN drew her mid-stride rather than crouched, the bow is barely drawn, and there's an unexplained spear point sticking up behind her head. The hood is down.",
-  "alt": "AI-generated illustration of a green-scaled lizardfolk ranger with gold eyes and a long tail, wearing studded leather and a quiver of arrows, holding a longbow while striding through a misty swamp"
+  "alt": "AI-generated illustration of a green-scaled lizardfolk ranger with gold eyes and a long tail, wearing studded leather and a quiver of arrows, holding a longbow while striding through a misty swamp",
+  "builder_changed": true
  },
  {
   "slug": "11-undead-wizard",
@@ -415,6 +420,7 @@
   "model": "Seedream 5 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a warrior, in practical, battle-worn gear, with visible scars and a well-used weapon. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: shaved, eyes: brown, skin: tan, expression: determined.\n\nGEAR\nwearing plate, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.\n\nSCENE\nFraming: full-body shot, the entire figure visible from head to toe, standing on its round base. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.\n\nSTYLE\nA hand-painted tabletop miniature figure on a round base, photographed close up, with fine brushwork, crisp highlights, and the setting shown as a small painted diorama.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
   "note": "Exactly what the new framing was meant to fix: the whole figure and its round base are in view. The paint job is bold and colourful, with a red and gold star tabard, a ginger braided beard and gold trim on the armour, in front of a burning-city backdrop. The greataxe is now a proper long-hafted two-hander, held upright like a staff. It's the same character as the photorealistic four-model comparison, with only the art style changed.",
-  "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, dark plate armour with gold trim, a red and gold tabard and a tall two-handed greataxe, standing on a round base in front of a burning ruined city"
+  "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, dark plate armour with gold trim, a red and gold tabard and a tall two-handed greataxe, standing on a round base in front of a burning ruined city",
+  "builder_changed": true
  }
 ]
