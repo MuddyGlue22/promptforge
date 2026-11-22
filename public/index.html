@@ -521,6 +521,36 @@ function syncStyleFraming() {
 }
 
 // ---------- randomise / clear ----------
+// What each class plausibly carries and wears. Used only by Randomize so random
+// characters make sense; every option stays available when choosing by hand.
+const CLASS_GEAR = {
+  "Alchemist": { weapons: ["Crossbow", "Dagger pair", "Shortbow", "None visible"], armour: ["Leather", "Studded leather", "Light cloak"] },
+  "Barbarian": { weapons: ["Greataxe", "Warhammer", "Longsword", "Glaive"], armour: ["Leather", "Studded leather", "Scale mail", "None"] },
+  "Bard":      { weapons: ["Rapier", "Shortbow", "Dagger pair", "Longsword"], armour: ["Leather", "Studded leather", "Light cloak"] },
+  "Champion":  { weapons: ["Longsword", "Warhammer", "Glaive"], armour: ["Plate", "Half plate", "Chain shirt"] },
+  "Cleric":    { weapons: ["Warhammer", "Staff", "Longsword"], armour: ["Chain shirt", "Scale mail", "Half plate", "Ceremonial vestments"] },
+  "Druid":     { weapons: ["Staff", "Shortbow", "None visible"], armour: ["Leather", "Cloth robes", "Light cloak", "None"] },
+  "Fighter":   { weapons: ["Longsword", "Greataxe", "Warhammer", "Glaive", "Longbow", "Crossbow"], armour: ["Plate", "Half plate", "Chain shirt", "Scale mail"] },
+  "Guardian":  { weapons: ["Warhammer", "Longsword", "Greataxe"], armour: ["Plate", "Half plate", "Scale mail", "Chain shirt"] },
+  "Monk":      { weapons: ["Staff", "Glaive", "None visible"], armour: ["Cloth robes", "Light cloak", "None"] },
+  "Paladin":   { weapons: ["Longsword", "Warhammer", "Glaive"], armour: ["Plate", "Half plate", "Chain shirt"] },
+  "Ranger":    { weapons: ["Longbow", "Shortbow", "Dagger pair", "Longsword"], armour: ["Leather", "Studded leather", "Chain shirt", "Light cloak"] },
+  "Rogue":     { weapons: ["Dagger pair", "Rapier", "Shortbow", "Crossbow"], armour: ["Leather", "Studded leather", "Light cloak"] },
+  "Seraph":    { weapons: ["Longsword", "Warhammer", "Glaive", "Staff"], armour: ["Plate", "Half plate", "Chain shirt", "Ceremonial vestments"] },
+  "Sorcerer":  { weapons: ["Staff", "Dagger pair", "None visible"], armour: ["Cloth robes", "Light cloak", "Leather"] },
+  "Warlock":   { weapons: ["Spellbook", "Staff", "Dagger pair", "None visible"], armour: ["Light cloak", "Leather", "Cloth robes"] },
+  "Warrior":   { weapons: ["Longsword", "Greataxe", "Warhammer", "Glaive", "Longbow"], armour: ["Chain shirt", "Scale mail", "Half plate", "Plate", "Leather"] },
+  "Wizard":    { weapons: ["Staff", "Spellbook", "None visible"], armour: ["Cloth robes", "Light cloak", "Ceremonial vestments"] }
+};
+const SPELLCASTERS = ["Bard", "Champion", "Cleric", "Druid", "Paladin", "Ranger", "Seraph", "Sorcerer", "Warlock", "Wizard"];
+const NOTHING_TO_LEAN_ON = ["None visible", "Spellbook", "Dagger pair"];
+
+function randomPose(cls, weapon) {
+  return pick(DATA.poses.filter(pose =>
+    !(pose === "Casting a spell" && cls in CLASS_GEAR && !SPELLCASTERS.includes(cls)) &&
+    !(pose === "Leaning on weapon" && NOTHING_TO_LEAN_ON.includes(weapon))));
+}
+
 function randomize() {
   $("ruleset").value = pick(DATA.rulesets);
   refreshAncestries();
@@ -535,12 +565,14 @@ function randomize() {
   $("skin").value = pick(DATA.skins);
   $("expression").value = pick(DATA.expressions);
   $("framing").value = pick(DATA.framings);
-  $("weapon").value = pick(DATA.weapons);
-  $("armour").value = pick(DATA.armours);
+  const gear = CLASS_GEAR[$("class").value];
+  $("weapon").value = pick(gear ? gear.weapons : DATA.weapons);
+  $("armour").value = pick(gear ? gear.armour : DATA.armours);
   $("setting").value = pick(DATA.settings);
   $("lighting").value = pick(DATA.lightings);
-  $("pose").value = pick(DATA.poses);
+  $("pose").value = randomPose($("class").value, $("weapon").value);
   $("style").value = pick(DATA.styles);
+  $("framing").disabled = false; // let syncStyleFraming start fresh
   delete $("framing").dataset.previous;
   syncStyleFraming();
   document.querySelectorAll("#accessories input").forEach(cb => {
