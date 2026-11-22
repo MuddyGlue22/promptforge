@@ -5,6 +5,7 @@ Usage (from the repo root):  python3 gallery/build.py
 
 Writes:
 - public/gallery/img/<slug>-600.webp and <slug>-full.webp (resized only, never cropped)
+- public/gallery/original/<slug>.<ext>  (byte-for-byte copy of the download, provenance data intact)
 - public/gallery/index.html            (overview grid)
 - public/gallery/<page>/index.html     (one page per character, e.g. /gallery/tiefling-warlock/)
 - public/sitemap.xml and public/robots.txt
@@ -42,6 +43,19 @@ def size(path):
 def webp(src, dest, width, quality):
     subprocess.run(["cwebp", "-quiet", "-q", str(quality), "-resize", str(width), "0",
                     str(src), "-o", str(dest)], check=True)
+
+
+FORMATS = {"jpeg": "jpg", "png": "png", "webp": "webp", "org.webmproject.webp": "webp"}
+
+
+def image_format(path):
+    out = subprocess.run(["sips", "-g", "format", str(path)], capture_output=True, text=True, check=True).stdout
+    fmt = out.strip().split()[-1].lower()
+    return FORMATS.get(fmt, path.suffix.lstrip(".").lower())
+
+
+def human_size(n):
+    return f"{n / 1_000_000:.1f} MB" if n >= 1_000_000 else f"{n // 1000} KB"
 
 
 def family(model):
@@ -82,6 +96,10 @@ def fill(template, values):
 def main():
     chars = json.loads((GALLERY / "characters.json").read_text())
     (OUT / "img").mkdir(parents=True, exist_ok=True)
+    originals = OUT / "original"
+    if originals.exists():
+        shutil.rmtree(originals)
+    originals.mkdir()
 
     for c in chars:
         src = next(p for p in (GALLERY / "images").glob(c["slug"] + ".*"))
@@ -91,11 +109,15 @@ def main():
         c["thumb"] = size(OUT / "img" / f"{c['slug']}-600.webp")
         c["full"] = size(OUT / "img" / f"{c['slug']}-full.webp")
         c["page"] = page_name(c["slug"])
+        ext = image_format(src)  # some downloads have the wrong extension; name by real format
+        c["original"] = f"{c['slug']}.{ext}"
+        shutil.copy2(src, originals / c["original"])  # exact copy, nothing re-encoded
+        c["original_label"] = f"{ext.upper().replace('JPG', 'JPEG')}, {human_size(src.stat().st_size)}"
 
     # Remove character pages that no longer exist in characters.json.
     pages = {c["page"] for c in chars}
     for d in OUT.iterdir():
-        if d.is_dir() and d.name != "img" and d.name not in pages:
+        if d.is_dir() and d.name not in ("img", "original") and d.name not in pages:
             shutil.rmtree(d)
 
     char_tpl = (GALLERY / "character.template.html").read_text()
@@ -112,6 +134,7 @@ def main():
             "MODEL": e(c["model"]), "STYLE": e(s["style"]), "FRAMING": e(s["framing"]),
             "NOTE": e(c["note"]), "PROMPT": e(c["prompt"]), "TRY_URL": e(try_url(s)),
             "SETTINGS": settings_rows(s),
+            "ORIGINAL": e(c["original"]), "ORIGINAL_LABEL": e(c["original_label"]),
             "PREV_PAGE": e(prev["page"]), "PREV_TITLE": e(prev["title"]),
             "NEXT_PAGE": e(nxt["page"]), "NEXT_TITLE": e(nxt["title"]),
         }
