@@ -492,3 +492,59 @@ a.button:hover { filter: brightness(1.05); }
 }
 .character-img figcaption { padding: 10px 14px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .character-img figcaption a { color: var(--ember); }
+
+/* Model comparisons: same prompt, several models side by side. */
+.section-heading, .comparisons h2 {
+  font-family: var(--display);
+  font-size: 20px;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  margin: 28px 0 14px;
+}
+.comparisons { margin-bottom: 8px; }
+.compare-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line-hi);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--panel);
+  margin-bottom: 18px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.compare-card:hover, .compare-card:focus-visible { transform: translateY(-2px); border-color: var(--ember); }
+.compare-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.compare-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--input); }
+.compare-thumbs img { display: block; width: 100%; height: auto; }
+.compare-card .chips { margin-top: 8px; }
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 26px;
+}
+.compare-item img { display: block; width: 100%; height: auto; }
+.compare-item figcaption { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.compare-item .note { font-size: 14.5px; line-height: 1.6; }
+.compare-item .original { margin: 0; font-size: 12.5px; }
+.compare-prompt { margin-bottom: 26px; }
+.related {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.related img { width: 120px; height: auto; border-radius: 10px; flex-shrink: 0; }
+.related > span { display: flex; flex-direction: column; gap: 6px; }
+.related:hover .card-title { color: var(--ember); }
+.eyebrow-small { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ember); }
+.related-text { color: var(--muted); font-size: 14.5px; }
+@media (max-width: 1000px) { .compare-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-thumbs { grid-template-columns: repeat(2, 1fr); }
+  .related img { width: 84px; }
+}
