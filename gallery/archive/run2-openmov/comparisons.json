@@ -1,0 +1,108 @@
+[
+ {
+  "slug": "dwarf-warrior",
+  "title": "Dwarf Warrior",
+  "settings": {
+   "ruleset": "Generic Fantasy",
+   "ancestry": "Dwarf",
+   "class": "Warrior",
+   "gender": "Male",
+   "age": "Middle-aged",
+   "build": "Stocky",
+   "hair": "Shaved",
+   "eyes": "Brown",
+   "skin": "Tan",
+   "expression": "Determined",
+   "weapon": "Greataxe",
+   "armour": "Plate",
+   "accessories": [
+    "Cloak",
+    "Pauldron",
+    "Gauntlets",
+    "Tabard"
+   ],
+   "framing": "Three-quarter",
+   "setting": "Ruined city",
+   "lighting": "Warm firelight",
+   "pose": "Relaxed stance",
+   "style": "Photorealistic",
+   "target-model": "Most models (GPT Image, Seedream, etc.)"
+  },
+  "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a warrior, in practical, battle-worn gear, with visible scars and a well-used weapon. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: shaved, eyes: brown, skin: tan, expression: determined.\n\nGEAR\nwearing plate, carrying greataxe, accessories: cloak, pauldron, gauntlets, tabard.\n\nSCENE\nFraming: three-quarter shot, framed from the knees up. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.\n\nSTYLE\nPhotorealistic, like a still from a high-budget fantasy film: real skin and material textures, practical costume and props, and a shallow depth of field.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+  "related": "13-dwarf-warrior-miniature",
+  "intro": "One prompt from the builder, using the new Photorealistic style, sent unchanged to four image models on OpenMov. Same words, same settings, four quite different dwarves. Each image is shown exactly as it came out.",
+  "entries": [
+   {
+    "key": "seedream",
+    "model": "Seedream 5 Pro",
+    "note": "The most convincing film still of the four: moody dusk light, fires burning in the ruins and real skin texture. All the gear is there, with a cloak, a heavy pauldron, gauntlets and a dark star tabard. The greataxe came out as a one-handed axe.",
+    "alt": "AI-generated photorealistic image of a bald dwarf warrior with a braided red-brown beard, plate armour, a dark cloak and star tabard, holding an axe in burning city ruins at dusk"
+   },
+   {
+    "key": "nano-banana",
+    "model": "Nano Banana 2.1",
+    "note": "The only one with a true greataxe, a huge engraved double-bladed one, and the most ornate armour. It looks more like a high-end game render than a film still. Look closely at the tabard: Nano Banana printed a faded picture of a person on it.",
+    "alt": "AI-generated photorealistic image of a bald dwarf warrior with beaded braids in his beard, ornate engraved plate armour and a ragged tabard, holding a large double-bladed axe among ruins with embers in the air"
+   },
+   {
+    "key": "qwen",
+    "model": "Qwen Image Pro",
+    "note": "The most practical costume: worn wool, scuffed leather, pouches and grime, like a film's costume department made it. It skimped on the plate, though, with pauldrons and bracers over a tunic instead of a breastplate, and the axe is a short one.",
+    "alt": "AI-generated photorealistic image of a scarred dwarf warrior with a long braided grey-brown beard, wearing a green wool cloak, steel pauldrons and leather bracers over a worn tunic, holding a hand axe in ruins at sunset"
+   },
+   {
+    "key": "wan",
+    "model": "WAN 2.7 Pro",
+    "note": "A strong, weathered face and a proper breastplate. WAN made two odd choices: the beard braids are pale blond and tied together under his chin, though the beard itself is dark, and the 'ruined city' became a tidy courtyard lit by braziers. The axe head is cut off at the bottom of the frame.",
+    "alt": "AI-generated photorealistic image of a bald, scarred dwarf warrior with a dark beard and two pale blond braids tied under his chin, wearing a steel breastplate and green cloak, holding a long axe in a stone courtyard lit by braziers"
+   }
+  ],
+  "builder_changed": true
+ },
+ {
+  "slug": "dwarf-warrior-miniature",
+  "title": "Dwarf Warrior Miniature",
+  "settings": {
+   "ruleset": "Generic Fantasy",
+   "ancestry": "Dwarf",
+   "class": "Warrior",
+   "gender": "Male",
+   "age": "Middle-aged",
+   "build": "Stocky",
+   "hair": "Shaved",
+   "eyes": "Brown",
+   "skin": "Tan",
+   "expression": "Determined",
+   "weapon": "Greataxe",
+   "armour": "Plate",
+   "accessories": [
+    "Cloak",
+    "Pauldron",
+    "Gauntlets",
+    "Tabard"
+   ],
+   "framing": "Full body",
+   "setting": "Ruined city",
+   "lighting": "Warm firelight",
+   "pose": "Relaxed stance",
+   "style": "Painted miniature",
+   "target-model": "Most models (GPT Image, Seedream, etc.)"
+  },
+  "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a warrior, in practical, battle-worn gear, with visible scars and a well-used weapon. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: shaved, eyes: brown, skin: tan, expression: determined.\n\nGEAR\nwearing plate, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade, accessories: cloak, pauldron, gauntlets, tabard.\n\nSCENE\nFraming: full-body shot, the entire figure visible from head to toe, standing on its round base. Pose: relaxed stance. Setting: ruined city. Lighting: warm firelight.\n\nSTYLE\nA hand-painted tabletop miniature figure on a round base, photographed close up, with fine brushwork, crisp highlights, and the setting shown as a small painted diorama.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+  "intro": "The same dwarf with the Painted miniature style, which always asks for a full-body figure on its round base. One prompt, sent unchanged to two image models on OpenMov, and two very different takes on a painted mini.",
+  "entries": [
+   {
+    "key": "seedream",
+    "model": "Seedream 5 Pro",
+    "note": "Exactly what the new framing was meant to fix: the whole figure and its round base are in view. The paint job is bold and colourful, with a red and gold star tabard, a ginger braided beard and gold trim on the armour, in front of a burning-city backdrop. The greataxe is now a proper long-hafted two-hander, held upright like a staff.",
+    "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided ginger beard, dark plate armour with gold trim, a red and gold tabard and a tall two-handed greataxe, standing on a round base in front of a burning ruined city"
+   },
+   {
+    "key": "nano-banana",
+    "model": "Nano Banana 2.1",
+    "note": "This really looks like a photo of a painted figure on a gaming table, with blurred ruined-wall terrain and a little campfire behind. The whole mini and its base are in view, and the greataxe is held across the body in both hands. The paint scheme is muted bronze and grey rather than colourful, and the cloak barely shows.",
+    "alt": "AI-generated image of a painted tabletop miniature of a bald dwarf warrior with a braided beard, bronze plate armour and a two-handed greataxe, standing on a round base among ruined stone wall terrain with a small campfire"
+   }
+  ]
+ }
+]

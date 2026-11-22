@@ -13,7 +13,8 @@
 - Paste the prompt exactly as written. (Each section also has a builder link that loads the same settings, if you'd rather copy from there; it gives the identical prompt.)
 - Aspect ratio **2:3 portrait** where the model offers it; otherwise the closest portrait ratio.
 - **Download the original file and keep it untouched.** Don't screenshot, re-save, convert or rename the extension. The gallery links each original as proof nothing was retouched.
-- Just leave the downloads in **Downloads** and tell me which is which (I can tell Seedream, Nano Banana and Qwen/WAN apart by image size; I'll only need to ask about Qwen vs WAN). Or save them as `gallery/images/<file name>.png` yourself.
+- Save each download into **`gallery/run3/`** as `<file name>.<extension it came with>` (comparison images go in `gallery/run3/compare/`). Or just leave them in Downloads and tell me which is which: I can tell Seedream and Nano Banana apart by image size, and only need to ask about Qwen vs WAN.
+- The previous runs are kept in `gallery/archive/` (see its README), and the live gallery keeps showing run 2 until run 3 is complete.
 - If you switch model or change anything, note it so the gallery notes stay accurate.
 
 | # | Character | Model | What's new since last run |
