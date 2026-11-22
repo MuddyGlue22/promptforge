@@ -156,8 +156,8 @@
   },
   "model": "Seedream 5 Pro",
   "prompt": "Generate an image.\n\nSUBJECT\nA middle-aged, stocky male dwarf, short and broad-shouldered, with a sturdy frame and a thick, braided beard, portrayed as a cleric, with a prominently displayed holy symbol, vestments worn over armour, and a soft divine glow. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: red, eyes: brown, skin: fair, expression: grim.\n\nGEAR\nwearing chain shirt, carrying warhammer, accessories: cloak, amulet.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: mountain pass. Lighting: dramatic side light.\n\nSTYLE\nClassic oil painting.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
-  "note": "This one really looks like a classic oil painting, with a braided red beard, a chain shirt, a black cloak and the glowing holy symbol picked out by the side light. Seedream chose a cross-shaped symbol and a halo-like glow, even though the prompt never named a faith.",
-  "alt": "AI-generated oil painting of a stern red-bearded dwarf cleric in chainmail, a white tabard and black cloak, with a glowing holy symbol and a warhammer, standing on a rocky mountain pass"
+  "note": "A classic oil painting, almost identical in composition to Seedream's run-2 version: a braided red beard, a chain shirt under a white and gold tabard, a black cloak and a glowing holy symbol in the side light on a rocky mountain pass. This time the warhammer is unmistakably a hammer, where run 2's had an axe blade. Seedream again chose a cross-shaped symbol and a halo-like glow, though the prompt never named a faith.",
+  "alt": "AI-generated oil painting of a stern red-bearded dwarf cleric in chainmail, a white and gold tabard and black cloak, with a glowing holy symbol and a warhammer, standing on a rocky mountain pass"
  },
  {
   "slug": "06-dragonborn-paladin",
