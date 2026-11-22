@@ -27,8 +27,8 @@ PUBLIC = ROOT / "public"
 OUT = PUBLIC / "gallery"
 SITE = "https://tavernportraits.com"
 
-SURFACE = {"Clank": "Metal plating", "Drakona": "Scales", "Wyrmling": "Scales", "Dragonborn": "Scales",
-           "Lizardfolk": "Scales", "Katari": "Fur", "Tengu": "Feathers", "Leshy": "Bark"}
+SURFACE = {"Clank": "Metal plating", "Drakona": "Scales", "Dragonborn": "Scales",
+           "Lizardfolk": "Scales", "Katari": "Fur", "Firbolg": "Fur", "Tengu": "Feathers", "Leshy": "Bark"}
 NUMBERS = {2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
 
 e = lambda s: html.escape(str(s), quote=True)

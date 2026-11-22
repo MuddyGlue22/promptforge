@@ -162,10 +162,10 @@ const DATA = {
 
   ancestries: {
     "Daggerheart": [
-      "Clank", "Ribit", "Katari", "Drakona", "Faerie", "Fungril",
-      "Galapa", "Giant", "Goblin", "Greataxe Orc", "Infernis",
-      "Simiah", "Seraph", "Wyrmling",
-      "Aetheris", "Earthkin", "Emberkin", "Gnome", "Skykin", "Tidekin", "Other"
+      "Aetheris", "Clank", "Drakona", "Dwarf", "Earthkin", "Elf", "Emberkin",
+      "Faerie", "Faun", "Firbolg", "Fungril", "Galapa", "Giant", "Gnome",
+      "Goblin", "Halfling", "Human", "Infernis", "Katari", "Orc", "Ribbet",
+      "Simiah", "Skykin", "Tidekin", "Other"
     ],
     "D&D 5e": [
       "Human", "Elf", "Dwarf", "Halfling", "Dragonborn", "Gnome",
@@ -304,7 +304,9 @@ const ANCESTRY_DETAILS = {
   "Skykin": "a skykin, a humanoid of flesh and air, with semi-translucent, sky-coloured skin, floating hair like wisps of cloud, elongated pointed ears, and a constant breeze fluttering their clothes",
   "Tidekin": "a tidekin, a humanoid of flesh and water, with finlike ears, webbed fingers, semi-translucent sea-coloured skin with colours shifting like waves, and hair that flows and ripples like water",
   "Clank": "a sentient, mechanical being of metal and gears, with visible rivets, hinges, and a glowing core",
-  "Ribit": "a frog-like humanoid with smooth, damp skin, large eyes, and webbed hands and feet",
+  "Ribbet": "a ribbet, a frog-like humanoid with protruding eyes set on the sides of the head, smooth, moist skin, and webbed hands and feet",
+  "Faun": "a faun, a goat-like humanoid with curving horns, square pupils, a fur-covered goat-like lower body, and cloven hooves",
+  "Firbolg": "a firbolg, a tall, muscular bovine humanoid covered in fur, with a broad nose, long drooping ears, and often horns",
   "Katari": "a feline humanoid with fur, whiskers, and retractable claws",
   "Drakona": "a draconic humanoid with scales, horns, and a tail",
   "Faerie": "a small winged fey with translucent wings and luminous features",
@@ -312,11 +314,8 @@ const ANCESTRY_DETAILS = {
   "Galapa": "a turtle-like humanoid with a hard shell on the back and a slow, deliberate manner",
   "Giant": "a giant, a towering humanoid around eight feet tall with broad shoulders, long arms, and a massive frame, clearly dwarfing the doorways, furniture, and any people nearby",
   "Goblin": "a small, quick-witted humanoid with large ears and sharp features",
-  "Greataxe Orc": "a muscular orc-like humanoid, heavily built and tusked",
   "Infernis": "a fiend-touched humanoid with horns and ember-colored eyes",
   "Simiah": "an ape-like humanoid with long arms, a thick brow, and expressive features",
-  "Seraph": "a celestial humanoid with feathered wings and a radiant bearing",
-  "Wyrmling": "a young dragon-kin humanoid with small horns, a scaled tail, and keen eyes",
 
   // D&D 5e / Pathfinder 2e / Generic Fantasy (Goblin above is shared)
   "Human": "a human",
@@ -341,16 +340,16 @@ const ANCESTRY_DETAILS = {
 const SURFACE_LABELS = {
   "Clank": "Metal plating",
   "Drakona": "Scales",
-  "Wyrmling": "Scales",
   "Dragonborn": "Scales",
   "Lizardfolk": "Scales",
   "Katari": "Fur",
+  "Firbolg": "Fur",
   "Tengu": "Feathers",
   "Leshy": "Bark"
 };
 
 const NO_HAIR_ANCESTRIES = [
-  "Clank", "Ribit", "Galapa", "Fungril", "Infernis", "Drakona", "Wyrmling",
+  "Clank", "Ribbet", "Galapa", "Fungril", "Infernis", "Drakona",
   "Dragonborn", "Lizardfolk", "Tengu", "Leshy"
 ];
 
@@ -431,6 +430,7 @@ function stripArticle(text) {
 // Where a ruleset's version of an ancestry looks different from the usual one.
 const RULESET_ANCESTRY_DETAILS = {
   "Daggerheart": {
+    "Orc": "an orc with square features, boar-like tusks jutting from the lower jaw, often decorated with ornaments, pointed ears, and a muscular build",
     "Gnome": "a gnome, about three feet tall, with a large conical head, softly pointed ears, wide eyes, a square frame with short legs, and long arms with large, dexterous hands"
   }
 };
