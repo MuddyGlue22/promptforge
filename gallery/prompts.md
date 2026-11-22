@@ -366,7 +366,7 @@ A single character, clearly the focus of the image. Correct anatomy with natural
 Generate an image.
 
 SUBJECT
-An adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, with furs, powerful muscular arms, war paint, and a wild, untamed look. A fantasy tabletop RPG character.
+An adult, muscular female orc with prominent tusks, a heavy brow, and a broad, powerful build, portrayed as a barbarian, draped in a heavy fur mantle, torso fully covered by their armour or clothing, with powerful arms, war paint, and a fierce, untamed look. A fantasy tabletop RPG character.
 
 APPEARANCE
 hair: black, eyes: brown, skin: green, expression: fierce.
