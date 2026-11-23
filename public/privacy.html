@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy – Tavern Portraits</title>
-<meta name="description" content="How Tavern Portraits handles your data: no accounts, no cookies, and your character choices never leave your browser.">
+<meta name="description" content="How Tavern Portraits handles your data: no accounts, no cookies, cookie-free visit counting, and your character choices never leave your browser.">
 <link rel="canonical" href="https://tavernportraits.com/privacy">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script defer src="/stats.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -19,16 +20,21 @@
   </header>
 
   <main class="panel prose">
-    <p class="updated">Last updated: 21 November 2026</p>
+    <p class="updated">Last updated: 23 November 2026</p>
 
-    <p>Tavern Portraits (<strong>tavernportraits.com</strong>) is a free tool for building AI image prompts for tabletop RPG characters. This policy explains what data is involved when you use it. The short version: we don't collect personal information, we don't use cookies, and the characters you build never leave your browser.</p>
+    <p>Tavern Portraits (<strong>tavernportraits.com</strong>) is a free tool for building AI image prompts for tabletop RPG characters. This policy explains what data is involved when you use it. The short version: we don't collect personal information, we don't use cookies, we count visits anonymously, and the characters you build never leave your browser.</p>
 
     <h2>What you enter stays on your device</h2>
     <p>The prompt builder runs entirely in your web browser. Your choices (ancestry, class, appearance, gear, notes and so on) and the prompt generated from them are not sent to us or stored anywhere. When you close or refresh the page, they're gone.</p>
     <p>When you press <strong>Copy prompt</strong>, the prompt is placed on your device's clipboard. We never read your clipboard.</p>
 
-    <h2>Cookies and tracking</h2>
-    <p>We don't set cookies, and we don't use analytics, advertising or tracking tools. There are no accounts or sign-ups.</p>
+    <h2>Cookies and visit counting</h2>
+    <p>We don't set cookies, and there are no accounts, sign-ups or advertising. To see whether anyone uses the site and how they found it, we count visits with two cookie-free tools that don't identify you or follow you to other websites:</p>
+    <ul>
+      <li><strong>Umami</strong> (Umami Cloud) counts page views and two button presses, <strong>Copy prompt</strong> and <strong>Share character</strong>. For each one it records the page address, the referring website, any campaign tag in the link (such as <code>utm_source</code>), your browser, operating system, device type, screen size, language and country. Your country is worked out from your IP address, which Umami doesn't store. It never receives your character, your prompt or anything you type: we strip that part of the address before anything is sent. See <a href="https://umami.is/privacy" rel="noopener">Umami's privacy policy</a>.</li>
+      <li><strong>Cloudflare Web Analytics</strong> measures visits and how quickly pages load. See <a href="https://www.cloudflare.com/web-analytics/" rel="noopener">Cloudflare Web Analytics</a>.</li>
+    </ul>
+    <p>If your browser sends a Do Not Track signal, Umami doesn't count your visit. Blocking scripts or using a content blocker also stops both counters, and the site works the same either way.</p>
 
     <h2>Third-party services</h2>
     <p>Like any website, loading the page means your browser connects to some servers that are not ours. These services receive technical information your browser sends automatically, such as your IP address, browser type and the page requested:</p>
@@ -36,7 +42,7 @@
       <li><strong>Cloudflare</strong> hosts the site and protects it from abuse. Cloudflare processes request data to deliver and secure the site. See <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare's privacy policy</a>.</li>
       <li><strong>Google Fonts</strong> supplies the site's typefaces. Your browser downloads them from Google's servers, so Google receives your IP address. See <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a> and the <a href="https://developers.google.com/fonts/faq/privacy" rel="noopener">Google Fonts privacy FAQ</a>.</li>
     </ul>
-    <p>We don't receive or keep this information ourselves beyond what Cloudflare's dashboard shows in aggregate (for example, total visits).</p>
+    <p>We don't receive or keep this information ourselves. We only see totals in the Umami and Cloudflare dashboards (for example, how many visits came from a given website).</p>
 
     <h2>Links to other websites</h2>
     <p>This site may link to other websites, such as AI image generators. Those sites have their own privacy policies, and we're not responsible for how they handle your data.</p>
@@ -48,7 +54,7 @@
     <p>Depending on where you live (for example, under the GDPR in the EU and UK or the CCPA in California), you may have rights to access, correct or delete personal data held about you. Because we don't collect or store personal data, there is normally nothing for us to provide or delete, but you're welcome to contact us with any question or request. You also have the right to complain to your local data protection authority.</p>
 
     <h2>Changes to this policy</h2>
-    <p>If we change how the site handles data, for example by adding analytics, advertising or affiliate links, we'll update this page <em>before</em> the change goes live and change the date at the top.</p>
+    <p>If we change how the site handles data, for example by adding advertising or affiliate links, we'll update this page <em>before</em> the change goes live and change the date at the top.</p>
 
     <h2>Contact</h2>
     <p>Questions about privacy? Email <a href="mailto:privacy@tavernportraits.com">privacy@tavernportraits.com</a>.</p>

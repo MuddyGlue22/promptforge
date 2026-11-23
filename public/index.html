@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script defer src="/stats.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -690,6 +691,7 @@ function flash(btn, message) {
 
 function copyPrompt(btn) {
   navigator.clipboard.writeText($("output").value).then(() => flash(btn, "Copied!"));
+  window.countEvent?.("copy-prompt");
 }
 
 // A link that reopens the builder with the current character (read by applyUrlSettings).
@@ -708,6 +710,7 @@ function shareUrl() {
 
 // Phones get the native share sheet; everything else copies the link.
 function shareCharacter(btn) {
+  window.countEvent?.("share-character");
   const url = shareUrl();
   if (navigator.share && window.matchMedia("(pointer: coarse)").matches) {
     navigator.share({ title: "My character – Tavern Portraits", url }).catch(() => {});
