@@ -485,16 +485,16 @@
    "weapon": "Greataxe",
    "armour": "Half plate",
    "framing": "Full body",
-   "setting": "Mountain pass",
-   "lighting": "Overcast daylight",
+   "setting": "Tavern",
+   "lighting": "Warm firelight",
    "pose": "Standing heroically",
    "style": "Painterly fantasy illustration",
    "target-model": "Most models (GPT Image, Seedream, etc.)"
   },
-  "model": "Seedream 5 Pro",
-  "prompt": "Generate an image.\n\nSUBJECT\nAn adult, muscular male goliath, a humanoid of giant descent standing seven to eight feet tall, towering over the people and doorways around them, with skin marked by darker, stone-like patches, portrayed as a fighter, in well-maintained armour, with the disciplined bearing of a trained soldier. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: bald, eyes: amber, skin: grey, expression: determined.\n\nGEAR\nwearing half-plate armour, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: mountain pass. Lighting: overcast daylight.\n\nSTYLE\nPainterly fantasy illustration.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
-  "note": "The grey skin with darker stone-like patches came out just as described, with a bald head and amber eyes. Two misses: with no people or doorways in an empty mountain pass, nothing shows his seven-to-eight-foot height, so he reads as a big man rather than a towering one. And the greataxe has a short haft, closer to a one-handed axe, despite the prompt asking for a massive two-handed one.",
-  "alt": "AI-generated painterly illustration of a bald, grey-skinned goliath fighter with darker stone-like patches on his skin and amber eyes, in half-plate armour and mail, holding a broad axe on a mountain pass"
+  "model": "Nano Banana 2.1",
+  "prompt": "Generate an image.\n\nSUBJECT\nAn adult, muscular male goliath, a humanoid of giant descent standing seven to eight feet tall, towering over the people and doorways around them, with skin marked by darker, stone-like patches, portrayed as a fighter, in well-maintained armour, with the disciplined bearing of a trained soldier. A fantasy tabletop RPG character.\n\nAPPEARANCE\nhair: bald, eyes: amber, skin: grey, expression: determined.\n\nGEAR\nwearing half-plate armour, carrying a massive two-handed greataxe with a long haft and a broad, heavy blade.\n\nSCENE\nFraming: full-body shot, the entire character visible from head to toe. Pose: standing heroically. Setting: tavern. Lighting: warm firelight.\n\nSTYLE\nPainterly fantasy illustration.\n\nREQUIREMENTS\nA single character, clearly the focus of the image. Correct anatomy with natural hands. No text, lettering, logos, brand marks, captions, watermarks, signatures, or borders.",
+  "note": "Third attempt. In an empty mountain pass (Seedream) nothing showed his seven-to-eight-foot height, so we moved him to a tavern, where there are people and doorways to compare him with. Seedream still left the tavern empty, but Nano Banana filled it with customers despite the prompt asking for a single character, and he clearly towers over them. The greataxe is finally right too: long-hafted and double-bladed. The stone-like patches on his skin are fainter than in Seedream's versions, showing mainly on his head.",
+  "alt": "AI-generated painterly illustration of a towering, bald, grey-skinned goliath fighter in half-plate armour, resting a long-hafted double-bladed greataxe on the floor of a firelit tavern, with much smaller customers drinking at tables behind him"
  },
  {
   "slug": "17-orc-ranger",
