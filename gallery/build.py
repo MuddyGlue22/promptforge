@@ -29,7 +29,7 @@ SITE = "https://tavernportraits.com"
 
 SURFACE = {"Clank": "Metal plating", "Drakona": "Scales", "Dragonborn": "Scales",
            "Lizardfolk": "Scales", "Katari": "Fur", "Tabaxi": "Fur", "Warforged": "Plating", "Firbolg": "Fur", "Tengu": "Feathers", "Leshy": "Bark"}
-NUMBERS = {2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
+NUMBERS = {2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen"}
 
 e = lambda s: html.escape(str(s), quote=True)
 
